@@ -1,0 +1,22 @@
+{
+	"pools": [
+		{
+			"rolls": 1.0,
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:crafting_table"
+				}
+			]
+		},
+		{
+			"rolls": 1.0,
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:glow_item_frame"
+				}
+			]
+		}
+	]
+}
