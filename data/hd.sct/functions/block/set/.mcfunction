@@ -13,7 +13,7 @@
 	execute unless block ~ ~ ~ minecraft:barrel[facing=up] run setblock ~ ~ ~ minecraft:barrel[facing=up]
 ## 特殊作業台UI
 	execute if data storage hd.sct: SCT.Items[] run data modify block ~ ~ ~ Items append from storage hd.sct: SCT.Items[]
-	data modify block ~ ~ ~ Items append value {Slot:15b,id:"minecraft:light_gray_stained_glass_pane",Count:1b,tag:{display:{Name:'{"text":""}'}}}
+	data modify block ~ ~ ~ Items append value {Slot:15b,id:"minecraft:light_gray_stained_glass_pane",Count:1b,tag:{display:{Name:'{"text":""}'},HdSctItem:1b}}
 ## 特殊作業台の名前
 	execute if data storage hd.sct: SCT.Name run data modify block ~ ~ ~ CustomName set from storage hd.sct: SCT.Name
 ## ASを召喚
