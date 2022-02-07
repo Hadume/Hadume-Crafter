@@ -13,5 +13,3 @@
 	data modify entity @e[type=minecraft:chest_minecart,tag=HdSct.ChestMinecart,distance=0,limit=1] Items append from block ~ ~-1 ~ Items[]
 ## チェスト付きトロッコを消す
 	kill @e[type=minecraft:chest_minecart,tag=HdSct.ChestMinecart,distance=0]
-## 樽の中身を消す
-	loot replace block ~ ~-1 ~ container.0 27 loot hd.sct:clear

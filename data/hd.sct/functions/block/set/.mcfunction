@@ -11,11 +11,27 @@
 	execute if data block ~ ~ ~ Items[] positioned ~ ~1 ~ run function hd.sct:block/set/take.items
 ## 樽の向きを変える
 	execute unless block ~ ~ ~ minecraft:barrel[facing=up] run setblock ~ ~ ~ minecraft:barrel[facing=up]
-## 特殊作業台UI
-	execute if data storage hd.sct: SCT.Items[] run data modify block ~ ~ ~ Items append from storage hd.sct: SCT.Items[]
-	data modify block ~ ~ ~ Items append value {Slot:15b,id:"minecraft:light_gray_stained_glass_pane",Count:1b,tag:{display:{Name:'{"text":""}'},HdSctItem:1b}}
+## 特殊作業台UIを作る
+	loot replace block ~ ~ ~ container.0 loot hd.sct:gui/air
+	loot replace block ~ ~ ~ container.4 loot hd.sct:gui/air
+	loot replace block ~ ~ ~ container.5 loot hd.sct:gui/air
+	loot replace block ~ ~ ~ container.6 loot hd.sct:gui/air
+	loot replace block ~ ~ ~ container.7 loot hd.sct:gui/air
+	loot replace block ~ ~ ~ container.8 loot hd.sct:gui/air
+	loot replace block ~ ~ ~ container.9 loot hd.sct:gui/recipe_book
+	loot replace block ~ ~ ~ container.13 loot hd.sct:gui/air
+	loot replace block ~ ~ ~ container.14 loot hd.sct:gui/air
+	loot replace block ~ ~ ~ container.15 loot hd.sct:gui/air
+	loot replace block ~ ~ ~ container.16 loot hd.sct:gui/air
+	loot replace block ~ ~ ~ container.17 loot hd.sct:gui/air
+	loot replace block ~ ~ ~ container.18 loot hd.sct:gui/air
+	loot replace block ~ ~ ~ container.22 loot hd.sct:gui/air
+	loot replace block ~ ~ ~ container.23 loot hd.sct:gui/air
+	loot replace block ~ ~ ~ container.24 loot hd.sct:gui/air
+	loot replace block ~ ~ ~ container.25 loot hd.sct:gui/air
+	loot replace block ~ ~ ~ container.26 loot hd.sct:gui/air
 ## 特殊作業台の名前
-	execute if data storage hd.sct: SCT.Name run data modify block ~ ~ ~ CustomName set from storage hd.sct: SCT.Name
+	execute if data storage hd.sct: SCT.Name run data modify block ~ ~ ~ CustomName set value '[{"text":""},{"text":"\\u0020\\u0020\\u0020\\u0020.","color":"gray"},{"text":"特殊クラフト"}]'
 ## ASを召喚
 	summon minecraft:armor_stand ~ ~ ~ {Tags:["HdSct","New.AS"],Invisible:1b,Marker:1b,Small:1b,ArmorItems:[{},{},{},{id:"minecraft:crafting_table",Count:1b,tag:{Enchantments:[{id:"",lvl:1s}]}}]}
 ## 個人ストレージを呼ぶ
