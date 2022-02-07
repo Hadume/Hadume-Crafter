@@ -1,8 +1,8 @@
-#> hd.sct:block/break/
+#> hd.sct:block/break
 #
 # 特殊作業台を破壊する
 #
-# @within function hd.sct:tick
+# @within function hd.sct:sct/tick
 
 ## 個人ストレージを呼ぶ
 	function #oh_my_dat:please
