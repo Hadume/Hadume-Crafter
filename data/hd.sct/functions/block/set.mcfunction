@@ -1,4 +1,4 @@
-#> hd.sct:block/set/
+#> hd.sct:block/set
 #
 # 特殊作業台を設置
 #
@@ -8,7 +8,8 @@
 # @private
  #declare tag New.AS
 ## 樽の中のアイテムを返す
-	execute if data block ~ ~ ~ Items[] positioned ~ ~1 ~ run function hd.sct:block/set/take.items
+	execute if data block ~ ~ ~ Items[] run data modify storage hd.sct:lib ReturnItems set from block ~ ~ ~ Items
+	execute if data block ~ ~ ~ Items[] positioned ~ ~1 ~ run function hd.sct:lib/return.items/
 ## 樽の向きを変える
 	execute unless block ~ ~ ~ minecraft:barrel[facing=up] run setblock ~ ~ ~ minecraft:barrel[facing=up]
 ## 特殊作業台UIを作る
