@@ -14,18 +14,18 @@
 ## レシピを返す
 	data modify storage hd.sct: AddRecipes[-1].Items set from storage hd.sct:lib ShiftSlot
 ## レシピリストをずらす
-	execute if score $HdSct.Lists HdSct.Temp matches 2.. run data modify storage hd.sct.asset:recipes _ append value [{Blank:1b}]
-	execute if score $HdSct.Lists HdSct.Temp matches 3.. run data modify storage hd.sct.asset:recipes _ append value [{Blank:1b}]
-	execute if score $HdSct.Lists HdSct.Temp matches 4.. run data modify storage hd.sct.asset:recipes _ append value [{Blank:1b}]
-	execute if score $HdSct.Lists HdSct.Temp matches 5.. run data modify storage hd.sct.asset:recipes _ append value [{Blank:1b}]
-	execute if score $HdSct.Lists HdSct.Temp matches 6.. run data modify storage hd.sct.asset:recipes _ append value [{Blank:1b}]
-	execute if score $HdSct.Lists HdSct.Temp matches 7.. run data modify storage hd.sct.asset:recipes _ append value [{Blank:1b}]
-	execute if score $HdSct.Lists HdSct.Temp matches 8.. run data modify storage hd.sct.asset:recipes _ append value [{Blank:1b}]
-	execute if score $HdSct.Lists HdSct.Temp matches 9 run data modify storage hd.sct.asset:recipes _ append value [{Blank:1b}]
+	execute if score $HdSct.Lists HdSct.Temp matches 2.. run data modify storage hd.sct.asset:recipes _ append value [{_:1b}]
+	execute if score $HdSct.Lists HdSct.Temp matches 3.. run data modify storage hd.sct.asset:recipes _ append value [{_:1b}]
+	execute if score $HdSct.Lists HdSct.Temp matches 4.. run data modify storage hd.sct.asset:recipes _ append value [{_:1b}]
+	execute if score $HdSct.Lists HdSct.Temp matches 5.. run data modify storage hd.sct.asset:recipes _ append value [{_:1b}]
+	execute if score $HdSct.Lists HdSct.Temp matches 6.. run data modify storage hd.sct.asset:recipes _ append value [{_:1b}]
+	execute if score $HdSct.Lists HdSct.Temp matches 7.. run data modify storage hd.sct.asset:recipes _ append value [{_:1b}]
+	execute if score $HdSct.Lists HdSct.Temp matches 8.. run data modify storage hd.sct.asset:recipes _ append value [{_:1b}]
+	execute if score $HdSct.Lists HdSct.Temp matches 9 run data modify storage hd.sct.asset:recipes _ append value [{_:1b}]
 ## レシピ追加
 	data modify storage hd.sct.asset:recipes _[-9] append from storage hd.sct: AddRecipes[-1]
 ## レシピリストを元に戻す
-	data remove storage hd.sct.asset:recipes _[][{Blank:1b}]
+	data remove storage hd.sct.asset:recipes _[][{_:1b}]
 ## レシピを追加できたスコアを追加
 	scoreboard players add $HdSct.Succeed HdSct.Temp 1
 ## 仮リストを消す
