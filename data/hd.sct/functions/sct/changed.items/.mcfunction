@@ -17,7 +17,7 @@
 	#execute unless score $HdSct.Changed HdSct.Temp matches 18 unless data storage hd.sct:temp ItemsCopy[{Slot:9b,tag:{HdSctRecipeBook:1b}}] run function hd.sct:recipe/book/open
 	execute unless score $HdSct.Changed HdSct.Temp matches 18 unless data storage hd.sct:temp ItemsCopy[{Slot:9b,tag:{HdSctRecipeBook:1b}}] run function hd.sct:sct/changed.items/repair.gui/
 ## 特殊作業台のGUIが変っていなかったら、レシピの確認
-	#execute if score $HdSct.Changed HdSct.Temp matches 18 run function hd.sct:sct/changed.items/check.recipe/1/
+	execute if score $HdSct.Changed HdSct.Temp matches 18 run function hd.sct:sct/changed.items/check.recipe/1
 ## 一時使用ScoreHolderをリセット
 	scoreboard players reset $HdSct.Changed
 ## 一時使用Storageをリセット
