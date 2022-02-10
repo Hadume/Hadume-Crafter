@@ -27,6 +27,7 @@
 	execute unless data storage hd.sct:temp ItemsCopy[{Slot:6b,tag:{HdSct:1b}}] run loot replace block ~ ~ ~ container.6 loot hd.sct:gui/air
 	execute unless data storage hd.sct:temp ItemsCopy[{Slot:7b,tag:{HdSct:1b}}] run loot replace block ~ ~ ~ container.7 loot hd.sct:gui/air
 	execute unless data storage hd.sct:temp ItemsCopy[{Slot:8b,tag:{HdSct:1b}}] run loot replace block ~ ~ ~ container.8 loot hd.sct:gui/air
+		execute unless data storage hd.sct:temp ItemsCopy[{Slot:9b,tag:{HdSct:1b}}] run loot replace block ~ ~ ~ container.9 loot hd.sct:gui/recipe_book
 	execute unless data storage hd.sct:temp ItemsCopy[{Slot:13b,tag:{HdSct:1b}}] run loot replace block ~ ~ ~ container.13 loot hd.sct:gui/air
 	execute unless data storage hd.sct:temp ItemsCopy[{Slot:14b,tag:{HdSct:1b}}] run loot replace block ~ ~ ~ container.14 loot hd.sct:gui/air
 	execute unless data storage hd.sct:temp ItemsCopy[{Slot:15b,tag:{HdSct:1b}}] run loot replace block ~ ~ ~ container.15 loot hd.sct:gui/air

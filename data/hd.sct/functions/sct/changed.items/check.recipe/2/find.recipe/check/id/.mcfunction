@@ -3,6 +3,7 @@
 # id、Tagが同じか確認
 #
 # @within function hd.sct:sct/changed.items/check.recipe/2/find.recipe/check/slot
+say id確認
 
 ## 
 	execute if data storage hd.sct:temp RecipesCopy[-1].Items[-10].id store success score $HdSct.Same.Recipe HdSct.Temp run data modify storage hd.sct:temp RecipesCopy[-1].Items[-10].id set from storage hd.sct:temp ItemsCopy[-10].id

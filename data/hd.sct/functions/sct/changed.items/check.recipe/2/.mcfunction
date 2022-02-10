@@ -3,6 +3,7 @@
 # レシピ確認工程２。SCTの中のアイテムがレシピにあるか確認
 #
 # @within function hd.sct:sct/changed.items/check.recipe/1
+say レシピ確認工程２
 
 #> ScoreHolder
 # @within function hd.sct:sct/changed.items/check.recipe/2/**
@@ -11,6 +12,8 @@
 	data modify storage hd.sct:lib ShiftSlot set from storage hd.sct:temp ItemsCopy
 	function hd.sct:lib/shift.slot/
 	data modify storage hd.sct:temp ItemsCopy set from storage hd.sct:lib ShiftSlot
+## 一時使用Storageをリセット
+	data remove storage hd.sct:lib ShiftSlot
 ## レシピのデータを他の場所に移す
 	execute if data storage hd.sct:temp ItemsCopy[-1] unless data storage hd.sct:temp ItemsCopy[-2] run data modify storage hd.sct:temp RecipesCopy set from storage hd.sct.asset:recipes _[-9]
 	execute if data storage hd.sct:temp ItemsCopy[-2] unless data storage hd.sct:temp ItemsCopy[-3] run data modify storage hd.sct:temp RecipesCopy set from storage hd.sct.asset:recipes _[-8]

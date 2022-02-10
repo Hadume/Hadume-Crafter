@@ -3,6 +3,7 @@
 # tagが同じか確認
 #
 # @within function hd.sct:sct/changed.items/check.recipe/2/find.recipe/check/count
+say tag確認
 
 ## displayを消す
 	execute if data storage hd.sct:temp ItemsCopy[-10].tag.display run data remove storage hd.sct:temp ItemsCopy[-10].tag.display

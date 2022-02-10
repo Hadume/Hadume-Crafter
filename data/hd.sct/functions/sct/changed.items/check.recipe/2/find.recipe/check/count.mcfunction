@@ -3,6 +3,7 @@
 # Countが同じか確認
 #
 # @within function hd.sct:sct/changed.items/check.recipe/2/find.recipe/check/id/
+say Count確認
 
 #> ScoreHolder
 # @private

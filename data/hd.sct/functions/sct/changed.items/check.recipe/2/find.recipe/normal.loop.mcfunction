@@ -2,8 +2,11 @@
 #
 # レシピ確認
 #
-# @within function hd.sct:sct/changed.items/check.recipe/2/find.recipe/loop
 # @private
+# @within function
+#   hd.sct:sct/changed.items/check.recipe/2/find.recipe/loop
+#   hd.sct:sct/changed.items/check.recipe/2/find.recipe/mirror/*/*
+say レシピ確認
 
 ## アイテムが同じか確認
 	function hd.sct:sct/changed.items/check.recipe/2/find.recipe/check/slot
