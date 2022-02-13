@@ -9,8 +9,8 @@
 ## Slotを消す
 	execute if data storage hd.sct: AddRecipes[-1].Options.Anywhere run data remove storage hd.sct:temp RecipeItems[].Slot
 ## レシピを左上にずらす
-	execute unless data storage hd.sct: AddRecipes[-1].Options.Anywhere run data modify storage hd.sct:lib ShiftSlot set from storage hd.sct:temp RecipeItems
-	function hd.sct:lib/shift.slot/
+	data modify storage hd.sct:lib ShiftSlot set from storage hd.sct:temp RecipeItems
+	execute unless data storage hd.sct: AddRecipes[-1].Options.Anywhere run function hd.sct:lib/shift.slot/
 ## レシピを返す
 	data modify storage hd.sct: AddRecipes[-1].Items set from storage hd.sct:lib ShiftSlot
 ## レシピリストをずらす

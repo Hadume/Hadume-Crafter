@@ -37,6 +37,4 @@ say レシピ確認工程２
 ## 一時使用ストレージのリセット
 	data remove storage hd.sct:lib ShiftSlot
 	data remove storage hd.sct:temp RecipesCopy
-	execute if data storage hd.sct: TagsCopy run data remove storage hd.sct: TagsCopy
-	execute if data storage hd.sct: TagItemsCopy run data remove storage hd.sct: TagItemsCopy
-	execute if data storage hd.sct: TempTag run data remove storage hd.sct: TempTag
+	execute if data storage hd.sct:temp TagsCopy run data remove storage hd.sct:temp TagsCopy
