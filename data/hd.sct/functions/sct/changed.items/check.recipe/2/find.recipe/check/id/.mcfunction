@@ -2,7 +2,9 @@
 #
 # id、Tagが同じか確認
 #
-# @within function hd.sct:sct/changed.items/check.recipe/2/find.recipe/check/slot
+# @within function
+#   hd.sct:sct/changed.items/check.recipe/2/find.recipe/check/slot
+#   hd.sct:sct/changed.items/check.recipe/2/find.recipe/anywhere/loop
 say id確認
 
 ## 
