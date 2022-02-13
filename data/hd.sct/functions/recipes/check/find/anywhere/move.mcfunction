@@ -1,8 +1,8 @@
-#> hd.sct:sct/changed.items/check.recipe/2/find.recipe/anywhere/move
+#> hd.sct:recipes/check/find/anywhere/move
 #
 # データを移しておく
 #
-# @within function hd.sct:sct/changed.items/check.recipe/2/find.recipe/anywhere/loop
+# @within function hd.sct:recipes/check/find/anywhere/loop
 
 say どこでもmove
 

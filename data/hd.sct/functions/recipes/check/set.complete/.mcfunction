@@ -1,11 +1,13 @@
-#> hd.sct:sct/changed.items/check.recipe/3/set.complete
+#> hd.sct:recipes/check/set.complete/
 #
 # 完成アイテムを表示させる
 #
-# @within function hd.sct:sct/changed.items/check.recipe/2/
+# @within function hd.sct:recipes/check/find/
 say レシピ確認３
 
 ## 完成アイテムを特殊作業台に表示させる
+	data modify storage hd.sct:temp RecipesCopy[-1].Complete.tag.HdSct set value 1b
+	data modify storage hd.sct:temp RecipesCopy[-1].Complete.tag.HdSctComplete set value 1b
 	data modify block ~ ~ ~ Items append from storage hd.sct:temp RecipesCopy[-1].Complete
 ## 要らない物を消す
 	data remove storage hd.sct:temp RecipesCopy[-1].Items[{Blank:1b}]

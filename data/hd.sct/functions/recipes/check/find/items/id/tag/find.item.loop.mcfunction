@@ -1,8 +1,8 @@
-#> hd.sct:sct/changed.items/check.recipe/2/find.recipe/check/id/tag/find.item.loop
+#> hd.sct:recipes/check/find/items/id/tag/find.item.loop
 #
 # アイテムが同じか確認
 #
-# @within function hd.sct:sct/changed.items/check.recipe/2/find.recipe/check/id/tag/
+# @within function hd.sct:recipes/check/find/items/id/tag/
 # @private
 
 ## 重ねる
@@ -10,4 +10,4 @@
 ## 違ったら、データを消す
 	execute if score $HdSct.Same.Recipe HdSct.Temp matches 1 run data remove storage hd.sct:temp TagsCopy[-1].Value[-1]
 ## ループ
-	execute if score $HdSct.Same.Recipe HdSct.Temp matches 1 if data storage hd.sct:temp TagsCopy[-1].Value[] run function hd.sct:sct/changed.items/check.recipe/2/find.recipe/check/id/tag/find.item.loop
+	execute if score $HdSct.Same.Recipe HdSct.Temp matches 1 if data storage hd.sct:temp TagsCopy[-1].Value[] run function hd.sct:recipes/check/find/items/id/tag/find.item.loop

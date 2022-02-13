@@ -1,8 +1,8 @@
-#> hd.sct:sct/changed.items/check.recipe/2/find.recipe/mirror/hor/move
+#> hd.sct:recipes/check/find/mirror/hor/move
 #
 # 
 #
-# @within function hd.sct:sct/changed.items/check.recipe/2/find.recipe/mirror/hor/
+# @within function hd.sct:recipes/check/find/mirror/hor/
 say レシピ確認(HOR1)
 
 ## 仮に移しておく
@@ -34,6 +34,6 @@ say レシピ確認(HOR1)
 	data remove storage hd.sct:temp ItemsCopy[{_:1b}]
 	data modify storage hd.sct:temp ItemsCopy append from storage hd.sct: Blank[]
 ## レシピの確認
-	function hd.sct:sct/changed.items/check.recipe/2/find.recipe/normal.loop
+	function hd.sct:recipes/check/find/normal.loop
 ## 一時使用Storageをリセット
 	data remove storage hd.sct:lib ShiftSlot

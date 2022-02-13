@@ -1,8 +1,8 @@
-#> hd.sct:sct/changed.items/check.recipe/2/find.recipe/mirror/vert/move
+#> hd.sct:recipes/check/find/mirror/vert/move
 #
 # 縦軸に鏡写しをする
 #
-# @within function hd.sct:sct/changed.items/check.recipe/2/find.recipe/mirror/vert/
+# @within function hd.sct:recipes/check/find/mirror/vert/
 say レシピ確認(VERT1)
 
 ## 仮に移しておく
@@ -35,7 +35,7 @@ say レシピ確認(VERT1)
 	data remove storage hd.sct:temp ItemsCopy[{_:1b}]
 	data modify storage hd.sct:temp ItemsCopy append from storage hd.sct: Blank[]
 ## レシピの確認
-	function hd.sct:sct/changed.items/check.recipe/2/find.recipe/normal.loop
+	function hd.sct:recipes/check/find/normal.loop
 ## 横軸の鏡写しがあったら、データを戻しておく
 	execute if score $HdSct.Same.Recipe HdSct.Temp matches 0 unless data storage hd.sct:temp ItemsCopy[-10] unless data storage hd.sct:temp RecipesCopy[-1].Items[-10] if data storage hd.sct:temp RecipesCopy[-1].Options.Mirror_HOR run data modify storage hd.sct:temp ItemsCopy append from storage hd.sct: Blank[]
 ## 一時使用Storageをリセット

@@ -1,8 +1,8 @@
-#> hd.sct:sct/changed.items/check.recipe/2/find.recipe/check/tag
+#> hd.sct:recipes/check/find/items/tag
 #
 # tagが同じか確認
 #
-# @within function hd.sct:sct/changed.items/check.recipe/2/find.recipe/check/count
+# @within function hd.sct:recipes/check/find/items/count
 say tag確認
 
 ## displayを消す
