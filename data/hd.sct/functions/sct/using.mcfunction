@@ -7,8 +7,6 @@
 #> ScoreHolder
 # @private
  #declare score_holder $HdSct.ChangedItems
-## 鍵をかける
-	execute if entity @s[tag=!HdSct.Using] run function hd.sct:block/lock/
 ## 個人ストレージを呼ぶ
 	function #oh_my_dat:please
 ## SCTの中身が変ったか確認

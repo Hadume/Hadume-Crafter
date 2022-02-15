@@ -1,4 +1,4 @@
-#> hd.sct:block/lock/un
+#> hd.sct:block/unlock
 #
 # SCTの鍵を開ける
 #
@@ -10,5 +10,5 @@
 	function #oh_my_dat:please
 ## データを消す
 	data remove storage oh_my_dat: _[-4][-4][-4][-4][-4][-4][-4][-4].HdSct.Using
-## Tagを外す
-	tag @s remove HdSct.Using
+## IDを消す
+	scoreboard players reset @s HdSct.ID

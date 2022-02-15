@@ -16,6 +16,7 @@
 #> Scoreboard
 # @internal
 	scoreboard objectives add HdSct.Temp dummy
+	scoreboard objectives add HdSct.ID dummy
 ## Gamerule
 	gamerule maxCommandChainLength 2147483647
 ## Storage
