@@ -3,7 +3,6 @@
 # 横軸の鏡写し
 #
 # @within function hd.sct:recipes/check/find/loop
-say レシピ確認(HOR)
 
 ## データを移しておく
 	data modify storage hd.sct:temp RecipeItems set from storage hd.sct:temp RecipesCopy[-1].Items

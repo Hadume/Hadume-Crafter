@@ -3,7 +3,6 @@
 # Slotが同じか確認
 #
 # @within function hd.sct:recipes/check/find/normal.loop
-say Slot確認
 
 ## 
 	execute store success score $HdSct.Same.Recipe HdSct.Temp run data modify storage hd.sct:temp RecipesCopy[-1].Items[-10].Slot set from storage hd.sct:temp ItemsCopy[-10].Slot

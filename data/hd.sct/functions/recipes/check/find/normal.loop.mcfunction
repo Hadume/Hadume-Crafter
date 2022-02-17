@@ -6,7 +6,6 @@
 # @within function
 #   hd.sct:recipes/check/find/loop
 #   hd.sct:recipes/check/find/mirror/*/*
-say レシピ確認
 
 ## アイテムが同じか確認
 	function hd.sct:recipes/check/find/items/slot

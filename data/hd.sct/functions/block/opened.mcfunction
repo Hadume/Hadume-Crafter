@@ -3,7 +3,7 @@
 # 樽を開いたら
 #
 # @within advancement hd.sct:opened.barrel
-say 樽を開いたよ
+
 #> Tags
 # @private
 # @within function hd.sct:block/unlock

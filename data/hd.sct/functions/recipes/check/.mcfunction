@@ -4,7 +4,6 @@
 #
 # @within function hd.sct:sct/changed.items/
 
-say レシピ確認工程１
 # 特殊作業台のUIのアイテムを消す
 	data remove storage hd.sct:temp ItemsCopy[{tag:{HdSct:1b}}]
 # 特殊作業台の中にアイテムがなかったら、完成アイテムSlotのアイテムを変える

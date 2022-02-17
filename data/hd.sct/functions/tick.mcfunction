@@ -8,7 +8,6 @@
 # @private
 # @within function hd.sct:block/set
 # @within function hd.sct:block/opened
-# @within function hd.sct:sct/changed.items/give.complete/inventory.changed/*
  #declare tag HdSct
 ## レシピを追加する
 	execute if data storage hd.sct: AddRecipes[] run function hd.sct:recipes/add/

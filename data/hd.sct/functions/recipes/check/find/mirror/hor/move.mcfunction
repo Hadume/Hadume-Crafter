@@ -3,7 +3,6 @@
 # 
 #
 # @within function hd.sct:recipes/check/find/mirror/hor/
-say レシピ確認(HOR1)
 
 ## 仮に移しておく
 	execute if data storage hd.sct:temp RecipeItems[{Slot:1b}] run data modify storage hd.sct:temp RecipeItems[{Slot:1b}].Slot set value 28b

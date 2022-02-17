@@ -3,7 +3,6 @@
 # 縦軸に鏡写しをする
 #
 # @within function hd.sct:recipes/check/find/mirror/vert/
-say レシピ確認(VERT1)
 
 ## 仮に移しておく
 	execute if data storage hd.sct:temp RecipeItems[{Slot:1b}] run data modify storage hd.sct:temp RecipeItems[{Slot:1b}].Slot set value 4b

@@ -3,7 +3,6 @@
 # レシピ確認工程２。SCTの中のアイテムがレシピにあるか確認
 #
 # @within function hd.sct:recipes/check/
-say レシピ確認工程２
 
 #> ScoreHolder
 # @within function hd.sct:recipes/check/find/**
@@ -37,4 +36,5 @@ say レシピ確認工程２
 ## 一時使用ストレージのリセット
 	data remove storage hd.sct:lib ShiftSlot
 	data remove storage hd.sct:temp RecipesCopy
+	execute if data storage hd.sct:temp ItemStash run data remove storage hd.sct:temp ItemStash
 	execute if data storage hd.sct:temp TagsCopy run data remove storage hd.sct:temp TagsCopy

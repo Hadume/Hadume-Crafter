@@ -4,10 +4,8 @@
 #
 # @within function hd.sct:recipes/check/find/anywhere/loop
 
-say どこでもmove
-
 ## 
-	data modify storage hd.sct:temp RecipeItemsStash prepend from storage hd.sct:temp RecipeCopy[0].Items[-10]
+	data modify storage hd.sct:temp RecipeItemsStash prepend from storage hd.sct:temp RecipesCopy[-1].Items[-10]
 ## データを消す
 	data remove storage hd.sct:temp RecipesCopy[-1].Items[-10]
 	data remove storage hd.sct:temp ItemsCopy[-1]

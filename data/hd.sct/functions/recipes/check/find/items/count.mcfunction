@@ -3,7 +3,6 @@
 # Countが同じか確認
 #
 # @within function hd.sct:recipes/check/find/items/id/
-say Count確認
 
 #> ScoreHolder
 # @private
