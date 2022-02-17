@@ -11,6 +11,9 @@
  #declare storage hd.sct:lib
  #declare storage hd.sct.asset:recipes
  #declare storage hd.sct.asset:tags
+#> Tags
+# @internal
+ #declare tag HdSctThis
 ## 初期化完了
 	data modify storage hd.sct: Init set value 1b
 #> Scoreboard

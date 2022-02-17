@@ -10,5 +10,8 @@
 	function #oh_my_dat:please
 ## データを消す
 	data remove storage oh_my_dat: _[-4][-4][-4][-4][-4][-4][-4][-4].HdSct.Using
-## IDを消す
-	scoreboard players reset @s HdSct.ID
+## プレイヤーのIDをリセット
+	tag @s add HdSctThis
+	execute as @a[scores={HdSct.ID=..2147483647}] if score @s HdSct.ID = @e[type=minecraft:armor_stand,tag=HdSctThis,distance=..0.001,limit=1] HdSct.ID run scoreboard players reset @s HdSct.ID
+## Tag
+	tag @s remove HdSctUsing
