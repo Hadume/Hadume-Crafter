@@ -8,6 +8,7 @@ say 樽を開いたよ
 # @private
 # @within function hd.sct:block/unlock
 # @within function hd.sct:sct/tick
+# @within function hd.sct:sct/inventory_changed
  #declare tag HdSctUsing
 #> Tags
 # @private
