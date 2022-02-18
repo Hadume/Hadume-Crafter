@@ -4,7 +4,7 @@
 #
 # @input
 #   storage hd.sct:lib ReturnItems
-# @within function hd.sct:**
+# @within function hd.sct:***
 
 #> Tags
 # @private
