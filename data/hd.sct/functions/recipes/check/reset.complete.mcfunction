@@ -2,7 +2,9 @@
 #
 # 
 #
-# @within function hd.sct:recipes/check/
+# @within function
+#   hd.sct:recipes/check/
+#   hd.sct:recipes/check/find/
 
 # アイテムをおく
 	loot replace block ~ ~ ~ container.15 loot hd.sct:gui/air

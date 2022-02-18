@@ -4,11 +4,12 @@
 #
 # @within function hd.sct:sct/changed.items/
 
-# 特殊作業台のUIのアイテムを消す
+## 特殊作業台のUIのアイテムを消す
 	data remove storage hd.sct:temp ItemsCopy[{tag:{HdSct:1b}}]
-# 特殊作業台の中にアイテムがなかったら、完成アイテムSlotのアイテムを変える
-	execute unless data storage hd.sct:temp ItemsCopy[] if data storage oh_my_dat: _[-4][-4][-4][-4][-4][-4][-4][-4].HdSctRecipe run function hd.sct:recipes/check/reset.complete
-# 特殊作業台の中にアイテムがあったら、次の工程を実行する
+	execute if data storage oh_my_dat: _[-4][-4][-4][-4][-4][-4][-4][-4].HdSct.Using.Recipe run data remove storage hd.sct:temp ItemsCopy[{Slot:15b}]
+## 特殊作業台の中にアイテムがなかったら、完成アイテムSlotのアイテムを変える
+	execute unless data storage hd.sct:temp ItemsCopy[] if data storage oh_my_dat: _[-4][-4][-4][-4][-4][-4][-4][-4].HdSct.Using.Recipe run function hd.sct:recipes/check/reset.complete
+## 特殊作業台の中にアイテムがあったら、次の工程を実行する
 	execute if data storage hd.sct:temp ItemsCopy[] run function hd.sct:recipes/check/find/
-# 特殊作業台の中のアイテムを個人ストレージに保存する
+## 特殊作業台の中のアイテムを個人ストレージに保存する
 	data modify storage oh_my_dat: _[-4][-4][-4][-4][-4][-4][-4][-4].HdSct.Using.Items set from block ~ ~ ~ Items

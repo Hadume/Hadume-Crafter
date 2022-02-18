@@ -21,9 +21,9 @@
 	scoreboard players operation $HdSct.Inventory.Slot HdSct.Temp *= $HdSct.64 HdSct.Temp
 ## プレイヤーに渡せる数より、渡す予定の完成アイテムのほうが多かったら
 	execute if score $HdSct.Inventory.Slot HdSct.Temp < $HdSct.Complete.Count HdSct.Temp run function hd.sct:sct/changed.items/shift.click/above.65/adjust.count
+## プレイヤーに渡した分Countを減らす
+	scoreboard players remove $HdSct.Complete.Count HdSct.Temp 64
 ## アイテムのCountを決める
 	function hd.sct:sct/changed.items/shift.click/above.65/set.count.loop
-## プレイヤーにアイテムを渡す
-	function hd.sct:lib/place.items/
 ## 一時使用ScoreHolderのリセット
 	scoreboard players reset $HdSct.Inventory.Slot

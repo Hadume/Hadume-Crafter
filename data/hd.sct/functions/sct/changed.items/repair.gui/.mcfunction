@@ -15,6 +15,7 @@
 	execute if data storage hd.sct:temp ItemsCopy[{Slot:19b}] run data remove storage hd.sct:temp ItemsCopy[{Slot:19b}]
 	execute if data storage hd.sct:temp ItemsCopy[{Slot:20b}] run data remove storage hd.sct:temp ItemsCopy[{Slot:20b}]
 	execute if data storage hd.sct:temp ItemsCopy[{Slot:21b}] run data remove storage hd.sct:temp ItemsCopy[{Slot:21b}]
+	execute if data storage oh_my_dat: _[-4][-4][-4][-4][-4][-4][-4][-4].HdSct.Using.Recipe run data remove storage hd.sct:temp ItemsCopy[{Slot:15b}]
 ## アイテムを返す
 	execute if data storage hd.sct:temp ItemsCopy[] run data modify storage hd.sct:lib ReturnItems set from storage hd.sct:temp ItemsCopy
 	execute if data storage hd.sct:temp ItemsCopy[] positioned ~ ~1 ~ run function hd.sct:lib/return.items/
@@ -30,7 +31,7 @@
 		execute unless data storage hd.sct:temp ItemsCopy[{Slot:9b,tag:{HdSct:1b}}] run loot replace block ~ ~ ~ container.9 loot hd.sct:gui/recipe_book
 	execute unless data storage hd.sct:temp ItemsCopy[{Slot:13b,tag:{HdSct:1b}}] run loot replace block ~ ~ ~ container.13 loot hd.sct:gui/air
 	execute unless data storage hd.sct:temp ItemsCopy[{Slot:14b,tag:{HdSct:1b}}] run loot replace block ~ ~ ~ container.14 loot hd.sct:gui/air
-	execute unless data storage hd.sct:temp ItemsCopy[{Slot:15b,tag:{HdSct:1b}}] run loot replace block ~ ~ ~ container.15 loot hd.sct:gui/air
+	execute unless data storage oh_my_dat: _[-4][-4][-4][-4][-4][-4][-4][-4].HdSct.Using.Recipe unless data storage hd.sct:temp ItemsCopy[{Slot:15b,tag:{HdSct:1b}}] run loot replace block ~ ~ ~ container.15 loot hd.sct:gui/air
 	execute unless data storage hd.sct:temp ItemsCopy[{Slot:16b,tag:{HdSct:1b}}] run loot replace block ~ ~ ~ container.16 loot hd.sct:gui/air
 	execute unless data storage hd.sct:temp ItemsCopy[{Slot:17b,tag:{HdSct:1b}}] run loot replace block ~ ~ ~ container.17 loot hd.sct:gui/air
 	execute unless data storage hd.sct:temp ItemsCopy[{Slot:18b,tag:{HdSct:1b}}] run loot replace block ~ ~ ~ container.18 loot hd.sct:gui/air
