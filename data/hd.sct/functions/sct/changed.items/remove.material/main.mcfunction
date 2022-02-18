@@ -2,7 +2,9 @@
 #
 # 素材アイテムを減らす
 #
-# @within function hd.sct:sct/changed.items/remove.material/check
+# @within function
+#   hd.sct:sct/changed.items/remove.material/check
+#   hd.sct:sct/changed.items/shift.click/
 
 #> ScoreHolder
 # @within hd.sct:sct/changed.items/remove.material/*
