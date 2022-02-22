@@ -1,0 +1,4 @@
+#> hd.sct.asset:recipes/minecraft/emerald
+# @within tag/function hd.sct.asset:recipes
+
+	data modify storage hd.sct: AddRecipes append value {display:[{Slot:1b,id:"minecraft:emerald_block",Count:1b}],Complete:{id:"minecraft:emerald",Count:9b},Tags:["minecraft:emerald"]}
