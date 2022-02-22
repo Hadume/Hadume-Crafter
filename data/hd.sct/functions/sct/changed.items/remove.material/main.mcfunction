@@ -30,7 +30,7 @@
 ## 特殊作業台の中のアイテムを上書きする
 	data modify block ~ ~ ~ Items append from storage hd.sct:temp Materials[]
 ## 個人ストレージ内の特殊作業台の中のアイテムを上書きする
-	data modify storage oh_my_dat: _[-4][-4][-4][-4][-4][-4][-4][-4].HdSct.Using.Items set from block ~ ~ ~ Items
+	data modify storage hd.sct:temp ItemsCopy set from block ~ ~ ~ Items
 ## 一時使用Storageのリセット
 	data remove storage hd.sct:temp Materials
 ## 一時使用ScoreHolderをリセット

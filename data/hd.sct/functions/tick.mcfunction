@@ -9,6 +9,9 @@
 # @within function hd.sct:block/set
 # @within function hd.sct:block/opened
  #declare tag HdSct
+## レシピブック
+	execute store result score $HdSct.Recipes.Now HdSct.Global if data storage hd.sct.asset:recipes _[][]
+	execute unless score $HdSct.Recipes.Now HdSct.Global = $HdSct.Recipes.Before HdSct.Global run function hd.sct:recipes/book/reset
 ## レシピを追加する
 	execute if data storage hd.sct: AddRecipes[] run function hd.sct:recipes/add/
 

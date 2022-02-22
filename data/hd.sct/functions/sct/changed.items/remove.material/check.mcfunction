@@ -2,7 +2,7 @@
 #
 # 素材アイテムを減らすか確認
 #
-# @within function hd.sct:sct/changed.items/
+# @within function hd.sct:sct/changed.items/not.recipe_book
 
 #> ScoreHolder
 # @private

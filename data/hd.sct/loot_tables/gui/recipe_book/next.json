@@ -1,0 +1,28 @@
+{
+	"pools": [
+		{
+			"rolls": 1.0,
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:arrow",
+					"functions": [
+						{
+							"function": "minecraft:set_name",
+							"entity": "this",
+							"name": {
+								"text": "次のページ",
+								"color": "yellow",
+								"italic": false
+							}
+						},
+						{
+							"function": "minecraft:set_nbt",
+							"tag": "{HdSct:1b}"
+						}
+					]
+				}
+			]
+		}
+	]
+}
