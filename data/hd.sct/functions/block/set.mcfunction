@@ -16,24 +16,7 @@
 ## 樽の向きを変える
 	execute unless block ~ ~ ~ minecraft:barrel[facing=up] run setblock ~ ~ ~ minecraft:barrel[facing=up]
 ## 特殊作業台UIを作る
-	loot replace block ~ ~ ~ container.0 loot hd.sct:gui/air
-	loot replace block ~ ~ ~ container.4 loot hd.sct:gui/air
-	loot replace block ~ ~ ~ container.5 loot hd.sct:gui/air
-	loot replace block ~ ~ ~ container.6 loot hd.sct:gui/air
-	loot replace block ~ ~ ~ container.7 loot hd.sct:gui/air
-	loot replace block ~ ~ ~ container.8 loot hd.sct:gui/air
-	loot replace block ~ ~ ~ container.9 loot hd.sct:gui/recipe_book
-	loot replace block ~ ~ ~ container.13 loot hd.sct:gui/air
-	loot replace block ~ ~ ~ container.14 loot hd.sct:gui/air
-	loot replace block ~ ~ ~ container.15 loot hd.sct:gui/air
-	loot replace block ~ ~ ~ container.16 loot hd.sct:gui/air
-	loot replace block ~ ~ ~ container.17 loot hd.sct:gui/air
-	loot replace block ~ ~ ~ container.18 loot hd.sct:gui/air
-	loot replace block ~ ~ ~ container.22 loot hd.sct:gui/air
-	loot replace block ~ ~ ~ container.23 loot hd.sct:gui/air
-	loot replace block ~ ~ ~ container.24 loot hd.sct:gui/air
-	loot replace block ~ ~ ~ container.25 loot hd.sct:gui/air
-	loot replace block ~ ~ ~ container.26 loot hd.sct:gui/air
+	function hd.sct:block/ui
 ## 特殊作業台の名前
 	execute if data storage hd.sct: SCT.Name run data modify block ~ ~ ~ CustomName set value '[{"text":""},{"text":"\\u0020\\u0020\\u0020\\u0020.","color":"gray"},{"text":"特殊クラフト"}]'
 ## ASを召喚
@@ -43,7 +26,7 @@
 ## 「額縁」か「輝く額縁」のどっちを使ったか記録
 	execute store success storage oh_my_dat: _[-4][-4][-4][-4][-4][-4][-4][-4].HdSct.ItemFrame byte 1 if entity @s[type=minecraft:item_frame]
 ## IDを渡す
-	execute store result score @e[type=minecraft:armor_stand,tag=HdSctNew,distance=..0.001] HdSct.ID run scoreboard players add $HdSct.ID HdSct.ID 1
+	execute store result score @e[type=minecraft:armor_stand,tag=HdSctNew,distance=..0.001] HdSct.ID run scoreboard players add $HdSct.ID HdSct.Global 1
 ## ASからTagを外す
 	tag @e[type=minecraft:armor_stand,tag=HdSctNew,distance=..0.001] remove HdSctNew
 ## 額縁を消す

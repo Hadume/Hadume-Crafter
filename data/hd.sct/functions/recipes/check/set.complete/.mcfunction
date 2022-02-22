@@ -4,6 +4,8 @@
 #
 # @within function hd.sct:recipes/check/find/
 
+## 完成アイテムSlotを代入
+	data modify storage hd.sct:temp RecipesCopy[-1].Complete.Slot set value 15b
 ## 完成アイテムを特殊作業台に表示させる
 	data modify block ~ ~ ~ Items append from storage hd.sct:temp RecipesCopy[-1].Complete
 ## 要らない物を消す
