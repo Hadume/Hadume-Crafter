@@ -10,7 +10,7 @@
 ## アイテムを返す
 	data remove storage hd.sct:temp ItemsCopy[{tag:{HdSct:1b}}]
 	data modify storage hd.sct:lib ReturnItems set from storage hd.sct:temp ItemsCopy
-	function hd.sct:lib/return.items/
+	execute positioned ~ ~1 ~ run function hd.sct:lib/return.items/
 ## レシピブックが無かったら生成
 	execute unless data storage hd.sct:recipe_book _[] run function hd.sct:recipes/book/make/
 ## 作業台にレシピブックデータを入れる
@@ -32,5 +32,3 @@
 	data modify storage oh_my_dat: _[-4][-4][-4][-4][-4][-4][-4][-4].HdSct.Using.RecipeBook set from storage hd.sct:recipe_book _[0].Data
 ## 
 	scoreboard players set @s HdSct.Page 1
-## Tagを付ける
-	tag @s add HdSctRecipeBook

@@ -4,10 +4,6 @@
 #
 # @within function hd.sct:sct/using
 
-#> 仮
-# @private
-# @within function hd.sct:sct/changed.items/recipe_book/
- #declare tag HdSctRecipeBook
 #> ScoreHolder
 # @within function hd.sct:sct/changed.items/*
  #declare score_holder $HdSct.Changed
@@ -16,9 +12,9 @@
 ## SCT内のアイテムの数を取得
 	execute store result score $HdSct.Changed HdSct.Temp if data storage hd.sct:temp ItemsCopy[{tag:{HdSct:1b}}]
 ## レシピブックを開いていたら
-	execute if entity @s[tag=HdSctRecipeBook] run function hd.sct:sct/changed.items/recipe_book/
+	execute if entity @s[scores={HdSct.Page=1..}] run function hd.sct:sct/changed.items/recipe_book/
 ## レシピブックを開いていなかったら
-	execute if entity @s[tag=!HdSctRecipeBook] if data storage hd.sct:temp ItemsCopy run function hd.sct:sct/changed.items/not.recipe_book
+	execute unless entity @s[scores={HdSct.Page=1..}] if data storage hd.sct:temp ItemsCopy run function hd.sct:sct/changed.items/not.recipe_book
 ## 一時使用ScoreHolderをリセット
 	scoreboard players reset $HdSct.Changed
 ## 一時使用Storageをリセット
