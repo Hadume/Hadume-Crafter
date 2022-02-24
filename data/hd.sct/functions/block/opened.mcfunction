@@ -31,5 +31,7 @@
 ## SCTに鍵をかける
 	execute as @e[type=minecraft:armor_stand,tag=HdSctThis] at @s run data modify block ~ ~ ~ Lock set value "§§"
 	execute as @e[type=minecraft:armor_stand,tag=HdSctThis] run tag @s add HdSctUsing
+## 
+	execute as @e[type=minecraft:armor_stand,tag=HdSctThis] at @s run function hd.sct:block/ui
 ## SCTの仮Tagを外す
 	execute as @e[type=minecraft:armor_stand,tag=HdSctThis] run tag @s remove HdSctThis

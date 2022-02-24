@@ -6,6 +6,7 @@
 #   hd.sct:block/set
 #   hd.sct:sct/changed.items/recipe_book/
 #   hd.sct:sct/changed.items/repair.gui/
+#   hd.sct:block/opened
 
 ## 
 	execute unless data storage hd.sct:temp ItemsCopy[{Slot:0b,tag:{HdSct:1b}}] run loot replace block ~ ~ ~ container.0 loot hd.sct:gui/air
