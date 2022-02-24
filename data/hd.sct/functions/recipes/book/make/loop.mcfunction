@@ -6,7 +6,7 @@
 # @private
 
 ## データを追加
-	execute if data storage hd.sct:recipe_book NotYet[] run data modify storage hd.sct:recipe_book _[-1].Data append from storage hd.sct:recipe_book NotYet[0].Complete
+	execute if data storage hd.sct:recipe_book NotYet[] run data modify storage hd.sct:recipe_book _[-1].Data append from storage hd.sct:recipe_book NotYet[0].Result
 	execute if data storage hd.sct:recipe_book NotYet[] run data modify storage hd.sct:recipe_book _[-1].Data[-1].tag.HdSct set value 1b
 	execute if data storage hd.sct:recipe_book NotYet[] run data modify storage hd.sct:recipe_book _[-1].Data[-1].tag.HdSctRecipe set from storage hd.sct:recipe_book NotYet[0].display
 ## 空白データを追加

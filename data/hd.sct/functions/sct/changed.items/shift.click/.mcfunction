@@ -8,8 +8,8 @@
 # @within function hd.sct:sct/changed.items/shift.click/**
 # @within function hd.sct:sct/changed.items/remove.material/loop
  #declare score_holder $HdSct.Least.Number
- #declare score_holder $HdSct.Complete.Count
- #declare score_holder $HdSct.Complete.Count1
+ #declare score_holder $HdSct.Result.Count
+ #declare score_holder $HdSct.Result.Count1
  #declare score_holder $HdSct.Count.0
  #declare score_holder $HdSct.Count.1
  #declare score_holder $HdSct.Slot
@@ -41,13 +41,13 @@
 	execute if data storage hd.sct:temp Materials[{_:1b}] run data remove storage hd.sct:temp Materials[{_:1b}]
 	execute if data storage hd.sct:temp RecipeItems[{_:1b}] run data remove storage hd.sct:temp RecipeItems[{_:1b}]
 ## 完成アイテムの数を取得
-	execute store result score $HdSct.Complete.Count HdSct.Temp store result score $HdSct.Complete.Count1 HdSct.Temp run data get storage oh_my_dat: _[-4][-4][-4][-4][-4][-4][-4][-4].HdSct.Using.Recipe.Complete.Count
+	execute store result score $HdSct.Result.Count HdSct.Temp store result score $HdSct.Result.Count1 HdSct.Temp run data get storage oh_my_dat: _[-4][-4][-4][-4][-4][-4][-4][-4].HdSct.Using.Recipe.Result.Count
 	execute store result score $HdSct.Count.0 HdSct.Temp run data get storage hd.sct:temp InventoryCopy[-1].Count
 ## 渡す完成アイテムの数を計算する
-	scoreboard players operation $HdSct.Complete.Count HdSct.Temp *= $HdSct.Least.Number HdSct.Temp
+	scoreboard players operation $HdSct.Result.Count HdSct.Temp *= $HdSct.Least.Number HdSct.Temp
 ## Countを上書き
-	execute store result storage hd.sct:temp InventoryCopy[-1].Count byte 1 run scoreboard players operation $HdSct.Count.0 HdSct.Temp += $HdSct.Complete.Count HdSct.Temp
-	execute if score $HdSct.Count.0 HdSct.Temp matches ..63 store result storage hd.sct:temp InventoryCopy[-1].Count byte 1 run scoreboard players operation $HdSct.Count.0 HdSct.Temp -= $HdSct.Complete.Count1 HdSct.Temp
+	execute store result storage hd.sct:temp InventoryCopy[-1].Count byte 1 run scoreboard players operation $HdSct.Count.0 HdSct.Temp += $HdSct.Result.Count HdSct.Temp
+	execute if score $HdSct.Count.0 HdSct.Temp matches ..63 store result storage hd.sct:temp InventoryCopy[-1].Count byte 1 run scoreboard players operation $HdSct.Count.0 HdSct.Temp -= $HdSct.Result.Count1 HdSct.Temp
 	execute if score $HdSct.Count.0 HdSct.Temp matches 64.. run data modify storage hd.sct:temp InventoryCopy[-1].Count set value 64b
 ## 上記の計算で Count > 64 だったら
 	execute if score $HdSct.Count.0 HdSct.Temp matches 64.. run function hd.sct:sct/changed.items/shift.click/above.65/
@@ -64,8 +64,8 @@
 	scoreboard players reset $HdSct.Count.0
 	scoreboard players reset $HdSct.Count.1
 	scoreboard players reset $HdSct.Least.Number
-	scoreboard players reset $HdSct.Complete.Count
-	scoreboard players reset $HdSct.Complete.Count1
+	scoreboard players reset $HdSct.Result.Count
+	scoreboard players reset $HdSct.Result.Count1
 	scoreboard players reset $HdSct.Slot
 ## 一時使用Storageをリセット
 	data remove storage hd.sct:temp InventoryCopy
