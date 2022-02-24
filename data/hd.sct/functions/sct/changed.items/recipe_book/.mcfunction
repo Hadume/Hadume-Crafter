@@ -33,6 +33,7 @@
 	execute unless data storage hd.sct:temp ItemsCopy[{Slot:23b,tag:{HdSct:1b}}] run function hd.sct:sct/changed.items/recipe_book/next
 	execute unless data storage hd.sct:temp ItemsCopy[{Slot:14b,tag:{HdSct:1b}}] run tag @s remove HdSctRecipeBook
 	execute unless data storage hd.sct:temp ItemsCopy[{Slot:14b,tag:{HdSct:1b}}] run data remove storage hd.sct:temp ItemsCopy
+	execute unless data storage hd.sct:temp ItemsCopy[{Slot:14b,tag:{HdSct:1b}}] run scoreboard players reset @s HdSct.Page
 	execute unless data storage hd.sct:temp ItemsCopy[{Slot:14b,tag:{HdSct:1b}}] run scoreboard players set $HdSct.Items.Changed HdSct.Temp 1
 	execute unless data storage hd.sct:temp ItemsCopy[{Slot:14b,tag:{HdSct:1b}}] run function hd.sct:block/ui
 
