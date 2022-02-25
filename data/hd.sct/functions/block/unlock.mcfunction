@@ -17,6 +17,7 @@
 	data modify block ~ ~ ~ Items set value []
 ## プレイヤーのIDをリセット
 	tag @s add HdSctThis
+	execute as @a[scores={HdSct.ID=..2147483647}] if score @s HdSct.ID = @e[type=minecraft:armor_stand,tag=HdSctThis,distance=..0.001,limit=1] HdSct.ID at @s run stopsound @s block minecraft:block.barrel.close
 	execute as @a[scores={HdSct.ID=..2147483647}] if score @s HdSct.ID = @e[type=minecraft:armor_stand,tag=HdSctThis,distance=..0.001,limit=1] HdSct.ID run scoreboard players reset @s HdSct.ID
 	tag @s remove HdSctThis
 ## スコアをリセット

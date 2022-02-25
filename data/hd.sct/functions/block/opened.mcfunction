@@ -35,3 +35,5 @@
 	execute as @e[type=minecraft:armor_stand,tag=HdSctThis] at @s run function hd.sct:block/ui
 ## SCTの仮Tagを外す
 	execute as @e[type=minecraft:armor_stand,tag=HdSctThis] run tag @s remove HdSctThis
+## 音を消す
+	stopsound @s * minecraft:block.barrel.open
