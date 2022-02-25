@@ -5,7 +5,7 @@
 # @within function hd.sct:recipes/check/find/items/id/
 
 ## Tagsをコピー
-	execute if data storage hd.sct.asset:tags _[] run data modify storage hd.sct:temp TagsCopy set from storage hd.sct.asset:tags _[]
+	execute if data storage hd.sct.asset:tags _[] run data modify storage hd.sct:temp TagsCopy set from storage hd.sct.asset:tags _
 ## 指定されたtagを探す
 	execute if data storage hd.sct:temp TagsCopy[] run function hd.sct:recipes/check/find/items/id/tag/find.tag.loop
 ## tagがあったら、アイテムが同じか確認

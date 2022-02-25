@@ -8,13 +8,13 @@
 # @internal
 # @within function hd.sct.asset:**
  #declare storage hd.sct:
+ #declare storage hd.sct.asset:tags
 #> Storage
 # @internal
  #declare storage hd.sct:temp
  #declare storage hd.sct:lib
  #declare storage hd.sct:recipe_book
  #declare storage hd.sct.asset:recipes
- #declare storage hd.sct.asset:tags
 #> Tags
 # @internal
  #declare tag HdSctThis
@@ -37,3 +37,4 @@
 		data modify storage hd.sct: Blank set value [{_:1b},{_:1b},{_:1b},{_:1b},{_:1b},{_:1b},{_:1b},{_:1b},{_:1b}]
 ## レシピ追加
 	function #hd.sct.asset:recipes
+	function #hd.sct.asset:tags
