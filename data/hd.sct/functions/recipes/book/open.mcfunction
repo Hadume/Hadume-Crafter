@@ -17,8 +17,9 @@
 	data modify block ~ ~ ~ Items append from storage hd.sct:recipe_book _[0].Data[]
 	loot replace block ~ ~ ~ container.5 loot hd.sct:gui/recipe_book/cant.prev
 	loot replace block ~ ~ ~ container.14 loot hd.sct:gui/recipe_book/close.recipe_book
-	execute if data storage hd.sct:recipe_book _[1] run loot replace block ~ ~ ~ container.23 loot hd.sct:gui/recipe_book/next
-	execute unless data storage hd.sct:recipe_book _[1] run loot replace block ~ ~ ~ container.23 loot hd.sct:gui/recipe_book/cant.next
+	execute if data storage hd.sct:recipe_book NotYet[] run loot replace block ~ ~ ~ container.23 loot hd.sct:gui/recipe_book/next
+	execute unless data storage hd.sct:recipe_book NotYet[] if data storage hd.sct:recipe_book _[1] run loot replace block ~ ~ ~ container.23 loot hd.sct:gui/recipe_book/next
+	execute unless data storage hd.sct:recipe_book NotYet[] unless data storage hd.sct:recipe_book _[1] run loot replace block ~ ~ ~ container.23 loot hd.sct:gui/recipe_book/cant.next
 	item replace block ~ ~ ~ container.6 with minecraft:air
 	item replace block ~ ~ ~ container.7 with minecraft:air
 	item replace block ~ ~ ~ container.8 with minecraft:air

@@ -19,8 +19,9 @@
 	execute unless data storage hd.sct:temp PageCopy[] if data storage hd.sct:recipe_book NotYet[] store success score $HdSct.Success HdSct.Temp run function hd.sct:recipes/book/make/
 	execute if score $HdSct.Success HdSct.Temp matches 1 run data modify storage oh_my_dat: _[-4][-4][-4][-4][-4][-4][-4][-4].HdSct.Using.RecipeBook set from storage hd.sct:recipe_book _[-1].Data
 ## アイテム
-	execute if data storage hd.sct:temp PageCopy[-2] run loot replace block ~ ~ ~ container.23 loot hd.sct:gui/recipe_book/next
-	execute unless data storage hd.sct:temp PageCopy[-2] run loot replace block ~ ~ ~ container.23 loot hd.sct:gui/recipe_book/cant.next
+	execute if data storage hd.sct:recipe_book NotYet[] run loot replace block ~ ~ ~ container.23 loot hd.sct:gui/recipe_book/next
+	execute unless data storage hd.sct:recipe_book NotYet[] if data storage hd.sct:temp PageCopy[-2] run loot replace block ~ ~ ~ container.23 loot hd.sct:gui/recipe_book/next
+	execute unless data storage hd.sct:recipe_book NotYet[] unless data storage hd.sct:temp PageCopy[-2] run loot replace block ~ ~ ~ container.23 loot hd.sct:gui/recipe_book/cant.next
 	execute if score @s HdSct.Page matches 2.. run loot replace block ~ ~ ~ container.5 loot hd.sct:gui/recipe_book/prev
 	execute if score @s HdSct.Page matches 1 run loot replace block ~ ~ ~ container.5 loot hd.sct:gui/recipe_book/cant.prev
 ## 一時使用ScoreHolder
