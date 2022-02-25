@@ -11,6 +11,7 @@
 ## アイテムを取得
 	data modify storage hd.sct:lib ReturnItems set from block ~ ~ ~ Items
 	data remove storage hd.sct:lib ReturnItems[{tag:{HdSct:1b}}]
+	execute if data storage oh_my_dat: _[-4][-4][-4][-4][-4][-4][-4][-4].HdSct.Using.Recipe run data remove storage hd.sct:lib ReturnItems[{Slot:15b}]
 	execute if data storage hd.sct:lib ReturnItems[] positioned ~ ~1 ~ run function hd.sct:lib/return.items/
 ## データを消す
 	data remove storage oh_my_dat: _[-4][-4][-4][-4][-4][-4][-4][-4].HdSct.Using
