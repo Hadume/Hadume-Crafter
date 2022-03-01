@@ -12,3 +12,5 @@
 	data remove storage hd.sct:temp RecipesCopy[-1].Items[{_:1b}]
 ## 今回使ったレシピを、コアの個人ストレージに保存する
 	data modify storage oh_my_dat: _[-4][-4][-4][-4][-4][-4][-4][-4].HdSct.Using.Recipe set from storage hd.sct:temp RecipesCopy[-1]
+## 
+	data modify storage oh_my_dat: _[-4][-4][-4][-4][-4][-4][-4][-4].HdSct.Using.Recipe.Result set from block ~ ~ ~ Items[{Slot:15b}]

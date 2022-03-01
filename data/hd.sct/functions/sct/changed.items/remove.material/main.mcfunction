@@ -36,3 +36,5 @@
 ## 一時使用ScoreHolderをリセット
 	scoreboard players reset $HdSct.Count.1
 	scoreboard players reset $HdSct.Count.2
+## 
+	item replace entity @s weapon.mainhand with minecraft:air
