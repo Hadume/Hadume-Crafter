@@ -22,7 +22,7 @@
 	execute if data storage hd.sct:temp ItemsCopy[{Slot:21b}] run data modify storage hd.sct:temp Materials append from storage hd.sct:temp ItemsCopy[{Slot:21b}]
 ## 素材アイテムに仮アイテムを追加する
 	data modify storage hd.sct:temp Materials append from storage hd.sct: Blank[]
-	data modify storage oh_my_dat: _[-4][-4][-4][-4][-4][-4][-4][-4].HdSct.Using.Recipe.Items append from storage hd.sct: Blank[]
+	data modify entity @e[predicate=hd.sct:storage,limit=1] data.Using.Recipe.Items append from storage hd.sct: Blank[]
 ## アイテムのCountを減らす
 	function hd.sct:sct/changed.items/remove.material/loop
 ## 仮データを消す

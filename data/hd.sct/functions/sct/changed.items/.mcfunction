@@ -8,7 +8,7 @@
 # @within function hd.sct:sct/changed.items/*
  #declare score_holder $HdSct.Changed
 ## 特殊作業台のどのアイテムが変ったか検知するための準備
-	data modify storage hd.sct:temp ItemsCopy set from storage oh_my_dat: _[-4][-4][-4][-4][-4][-4][-4][-4].HdSct.Using.Items
+	data modify storage hd.sct:temp ItemsCopy set from entity @e[predicate=hd.sct:storage,limit=1] data.Using.Items
 ## SCT内のアイテムの数を取得
 	execute store result score $HdSct.Changed HdSct.Temp if data storage hd.sct:temp ItemsCopy[{tag:{HdSct:1b}}]
 ## レシピブックを開いていたら
@@ -20,4 +20,4 @@
 ## 一時使用Storageをリセット
 	data remove storage hd.sct:temp ItemsCopy
 ## 個人ストレージに保存
-	data modify storage oh_my_dat: _[-4][-4][-4][-4][-4][-4][-4][-4].HdSct.Using.Items set from block ~ ~ ~ Items
+	data modify entity @e[predicate=hd.sct:storage,limit=1] data.Using.Items set from block ~ ~ ~ Items

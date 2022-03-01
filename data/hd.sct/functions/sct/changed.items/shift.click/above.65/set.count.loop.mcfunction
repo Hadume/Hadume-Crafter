@@ -6,7 +6,7 @@
 # @private
 
 ## 完成アイテムをコピー
-	data modify storage hd.sct:lib PlaceItems prepend from storage oh_my_dat: _[-4][-4][-4][-4][-4][-4][-4][-4].HdSct.Using.Recipe.Result
+	data modify storage hd.sct:lib PlaceItems prepend from entity @e[predicate=hd.sct:storage,limit=1] data.Using.Recipe.Result
 ## Countを代入
 	execute if score $HdSct.Result.Count HdSct.Temp < $HdSct.Count.Max HdSct.Temp store result storage hd.sct:lib PlaceItems[0].Count byte 1 run scoreboard players get $HdSct.Result.Count HdSct.Temp
 	execute if score $HdSct.Result.Count HdSct.Temp >= $HdSct.Count.Max HdSct.Temp store result storage hd.sct:lib PlaceItems[0].Count byte 1 run scoreboard players get $HdSct.Count.Max HdSct.Temp

@@ -19,23 +19,23 @@
  #declare tag HdSctAS
 ## インベントリーのコピー
 	data modify storage hd.sct:temp InventoryCopy set from entity @s Inventory
-	data modify storage hd.sct:temp InventoryPast set from storage oh_my_dat: _[-4][-4][-4][-4][-4][-4][-4][-4].HdSct.Using.Inventory
+	data modify storage hd.sct:temp InventoryPast set from entity @e[predicate=hd.sct:storage,limit=1] data.Using.Inventory
 ## 増えたアイテムを特定する
 	execute if data storage hd.sct:temp InventoryPast[] run function hd.sct:sct/changed.items/shift.click/find.changed.item.loop
 ## 特殊作業台内のアイテムのコピー
-	execute if data storage oh_my_dat: _[-4][-4][-4][-4][-4][-4][-4][-4].HdSct.Using.Items[{Slot:1b}] run data modify storage hd.sct:temp Materials append from storage oh_my_dat: _[-4][-4][-4][-4][-4][-4][-4][-4].HdSct.Using.Items[{Slot:1b}]
-	execute if data storage oh_my_dat: _[-4][-4][-4][-4][-4][-4][-4][-4].HdSct.Using.Items[{Slot:2b}] run data modify storage hd.sct:temp Materials append from storage oh_my_dat: _[-4][-4][-4][-4][-4][-4][-4][-4].HdSct.Using.Items[{Slot:2b}]
-	execute if data storage oh_my_dat: _[-4][-4][-4][-4][-4][-4][-4][-4].HdSct.Using.Items[{Slot:3b}] run data modify storage hd.sct:temp Materials append from storage oh_my_dat: _[-4][-4][-4][-4][-4][-4][-4][-4].HdSct.Using.Items[{Slot:3b}]
-	execute if data storage oh_my_dat: _[-4][-4][-4][-4][-4][-4][-4][-4].HdSct.Using.Items[{Slot:10b}] run data modify storage hd.sct:temp Materials append from storage oh_my_dat: _[-4][-4][-4][-4][-4][-4][-4][-4].HdSct.Using.Items[{Slot:10b}]
-	execute if data storage oh_my_dat: _[-4][-4][-4][-4][-4][-4][-4][-4].HdSct.Using.Items[{Slot:11b}] run data modify storage hd.sct:temp Materials append from storage oh_my_dat: _[-4][-4][-4][-4][-4][-4][-4][-4].HdSct.Using.Items[{Slot:11b}]
-	execute if data storage oh_my_dat: _[-4][-4][-4][-4][-4][-4][-4][-4].HdSct.Using.Items[{Slot:12b}] run data modify storage hd.sct:temp Materials append from storage oh_my_dat: _[-4][-4][-4][-4][-4][-4][-4][-4].HdSct.Using.Items[{Slot:12b}]
-	execute if data storage oh_my_dat: _[-4][-4][-4][-4][-4][-4][-4][-4].HdSct.Using.Items[{Slot:19b}] run data modify storage hd.sct:temp Materials append from storage oh_my_dat: _[-4][-4][-4][-4][-4][-4][-4][-4].HdSct.Using.Items[{Slot:19b}]
-	execute if data storage oh_my_dat: _[-4][-4][-4][-4][-4][-4][-4][-4].HdSct.Using.Items[{Slot:20b}] run data modify storage hd.sct:temp Materials append from storage oh_my_dat: _[-4][-4][-4][-4][-4][-4][-4][-4].HdSct.Using.Items[{Slot:20b}]
-	execute if data storage oh_my_dat: _[-4][-4][-4][-4][-4][-4][-4][-4].HdSct.Using.Items[{Slot:21b}] run data modify storage hd.sct:temp Materials append from storage oh_my_dat: _[-4][-4][-4][-4][-4][-4][-4][-4].HdSct.Using.Items[{Slot:21b}]
+	execute if data entity @e[predicate=hd.sct:storage,limit=1] data.Using.Items[{Slot:1b}] run data modify storage hd.sct:temp Materials append from entity @e[predicate=hd.sct:storage,limit=1] data.Using.Items[{Slot:1b}]
+	execute if data entity @e[predicate=hd.sct:storage,limit=1] data.Using.Items[{Slot:2b}] run data modify storage hd.sct:temp Materials append from entity @e[predicate=hd.sct:storage,limit=1] data.Using.Items[{Slot:2b}]
+	execute if data entity @e[predicate=hd.sct:storage,limit=1] data.Using.Items[{Slot:3b}] run data modify storage hd.sct:temp Materials append from entity @e[predicate=hd.sct:storage,limit=1] data.Using.Items[{Slot:3b}]
+	execute if data entity @e[predicate=hd.sct:storage,limit=1] data.Using.Items[{Slot:10b}] run data modify storage hd.sct:temp Materials append from entity @e[predicate=hd.sct:storage,limit=1] data.Using.Items[{Slot:10b}]
+	execute if data entity @e[predicate=hd.sct:storage,limit=1] data.Using.Items[{Slot:11b}] run data modify storage hd.sct:temp Materials append from entity @e[predicate=hd.sct:storage,limit=1] data.Using.Items[{Slot:11b}]
+	execute if data entity @e[predicate=hd.sct:storage,limit=1] data.Using.Items[{Slot:12b}] run data modify storage hd.sct:temp Materials append from entity @e[predicate=hd.sct:storage,limit=1] data.Using.Items[{Slot:12b}]
+	execute if data entity @e[predicate=hd.sct:storage,limit=1] data.Using.Items[{Slot:19b}] run data modify storage hd.sct:temp Materials append from entity @e[predicate=hd.sct:storage,limit=1] data.Using.Items[{Slot:19b}]
+	execute if data entity @e[predicate=hd.sct:storage,limit=1] data.Using.Items[{Slot:20b}] run data modify storage hd.sct:temp Materials append from entity @e[predicate=hd.sct:storage,limit=1] data.Using.Items[{Slot:20b}]
+	execute if data entity @e[predicate=hd.sct:storage,limit=1] data.Using.Items[{Slot:21b}] run data modify storage hd.sct:temp Materials append from entity @e[predicate=hd.sct:storage,limit=1] data.Using.Items[{Slot:21b}]
 ## レシピのアイテムをコピー
-	data modify storage hd.sct:temp RecipeItems set from storage oh_my_dat: _[-4][-4][-4][-4][-4][-4][-4][-4].HdSct.Using.Recipe.Items
+	data modify storage hd.sct:temp RecipeItems set from entity @e[predicate=hd.sct:storage,limit=1] data.Using.Recipe.Items
 ## 
-	execute as @e[type=minecraft:armor_stand,tag=HdSctThis] run data modify entity @s HandItems[0] set from storage oh_my_dat: _[-4][-4][-4][-4][-4][-4][-4][-4].HdSct.Using.Recipe.Result
+	execute as @e[type=minecraft:armor_stand,tag=HdSctThis] run data modify entity @s HandItems[0] set from entity @e[predicate=hd.sct:storage,limit=1] data.Using.Recipe.Result
 ## 
 	execute as @e[type=minecraft:armor_stand,tag=HdSctThis] unless predicate hd.sct:stack/1 unless predicate hd.sct:stack/16 run scoreboard players set $HdSct.Count.Max HdSct.Temp 64
 	execute as @e[type=minecraft:armor_stand,tag=HdSctThis] if predicate hd.sct:stack/1 run scoreboard players set $HdSct.Count.Max HdSct.Temp 1
@@ -48,7 +48,7 @@
 	execute if data storage hd.sct:temp Materials[{_:1b}] run data remove storage hd.sct:temp Materials[{_:1b}]
 	execute if data storage hd.sct:temp RecipeItems[{_:1b}] run data remove storage hd.sct:temp RecipeItems[{_:1b}]
 ## 完成アイテムの数を取得
-	execute store result score $HdSct.Result.Count HdSct.Temp store result score $HdSct.Result.Count1 HdSct.Temp run data get storage oh_my_dat: _[-4][-4][-4][-4][-4][-4][-4][-4].HdSct.Using.Recipe.Result.Count
+	execute store result score $HdSct.Result.Count HdSct.Temp store result score $HdSct.Result.Count1 HdSct.Temp run data get entity @e[predicate=hd.sct:storage,limit=1] data.Using.Recipe.Result.Count
 	execute store result score $HdSct.Count.0 HdSct.Temp run data get storage hd.sct:temp InventoryCopy[-1].Count
 ## 渡す完成アイテムの数を計算する
 	scoreboard players operation $HdSct.Result.Count HdSct.Temp *= $HdSct.Least.Number HdSct.Temp
@@ -66,7 +66,7 @@
 ## 完成アイテムSlotを直す
 	loot replace block ~ ~ ~ container.15 loot hd.sct:gui/air
 ## SCTのレシピデータを消す
-	data remove storage oh_my_dat: _[-4][-4][-4][-4][-4][-4][-4][-4].HdSct.Using.Recipe
+	data remove entity @e[predicate=hd.sct:storage,limit=1] data.Using.Recipe
 ## 一時使用ScoreHolderのリセット
 	scoreboard players reset $HdSct.Count.0
 	scoreboard players reset $HdSct.Count.1

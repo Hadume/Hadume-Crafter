@@ -9,7 +9,7 @@
 ## ページを探す
 	function hd.sct:recipes/book/find/
 ## ページがあったら、上書き
-	execute if data storage hd.sct:temp PageCopy[] run data modify storage oh_my_dat: _[-4][-4][-4][-4][-4][-4][-4][-4].HdSct.Using.RecipeBook set from storage hd.sct:temp PageCopy[0].Data
+	execute if data storage hd.sct:temp PageCopy[] run data modify entity @e[predicate=hd.sct:storage,limit=1] data.Using.RecipeBook set from storage hd.sct:temp PageCopy[0].Data
 ## ページが無かったら、スコアを減らす
 	execute unless data storage hd.sct:temp PageCopy[] run scoreboard players remove @s HdSct.Page 1
 ## アイテム

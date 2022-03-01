@@ -5,6 +5,8 @@
 # @within function hd.sct:sct/add.recipe/check
 
 ## 
+	data remove storage hd.sct:temp Tell.Result.Slot
+## 
 	data modify storage hd.sct:temp Tell.Recipes set from storage hd.sct:temp ItemsCopy
 ## 
 	execute if data storage hd.sct:temp ItemsCopy[{Slot:1b}] run data modify storage hd.sct:temp ItemsCopy[{Slot:1b}].Slot set value 6b
@@ -24,4 +26,4 @@
 ## GUIを戻す
 	loot replace block ~ ~ ~ container.17 loot hd.sct:gui/export
 ## SCTの中身を取得
-	data modify storage oh_my_dat: _[-4][-4][-4][-4][-4][-4][-4][-4].HdSct.Using.Items set from block ~ ~ ~ Items
+	data modify entity @e[predicate=hd.sct:storage,limit=1] data.Using.Items set from block ~ ~ ~ Items

@@ -17,14 +17,14 @@
 	execute if data storage hd.sct:temp ItemsCopy[{Slot:19b}] run data remove storage hd.sct:temp ItemsCopy[{Slot:19b}]
 	execute if data storage hd.sct:temp ItemsCopy[{Slot:20b}] run data remove storage hd.sct:temp ItemsCopy[{Slot:20b}]
 	execute if data storage hd.sct:temp ItemsCopy[{Slot:21b}] run data remove storage hd.sct:temp ItemsCopy[{Slot:21b}]
-	execute if entity @s[tag=!HdSct.Recipe] if data storage oh_my_dat: _[-4][-4][-4][-4][-4][-4][-4][-4].HdSct.Using.Recipe run data remove storage hd.sct:temp ItemsCopy[{Slot:15b}]
+	execute if entity @s[tag=!HdSct.Recipe] if data entity @e[predicate=hd.sct:storage,limit=1] data.Using.Recipe run data remove storage hd.sct:temp ItemsCopy[{Slot:15b}]
 	execute if entity @s[tag=HdSct.Recipe] run data remove storage hd.sct:temp ItemsCopy[{Slot:15b}]
 ## アイテムを返す
 	execute if data storage hd.sct:temp ItemsCopy[] run data modify storage hd.sct:lib ReturnItems set from storage hd.sct:temp ItemsCopy
 	execute if data storage hd.sct:temp ItemsCopy[] positioned ~ ~1 ~ run function hd.sct:lib/return.items/
 ## もう一回チェストの中身を取得
-	data modify storage hd.sct:temp ItemsCopy set from storage oh_my_dat: _[-4][-4][-4][-4][-4][-4][-4][-4].HdSct.Using.Items
+	data modify storage hd.sct:temp ItemsCopy set from entity @e[predicate=hd.sct:storage,limit=1] data.Using.Items
 ## GUIを戻す
 	function hd.sct:block/ui
 ## SCTの中身を取得
-	data modify storage oh_my_dat: _[-4][-4][-4][-4][-4][-4][-4][-4].HdSct.Using.Items set from block ~ ~ ~ Items
+	data modify entity @e[predicate=hd.sct:storage,limit=1] data.Using.Items set from block ~ ~ ~ Items

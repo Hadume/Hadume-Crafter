@@ -5,6 +5,9 @@
 # @within function hd.sct:tick
 
 #> Tags
+# @internal
+ #declare tag HdSctStorage
+#> Tags
 # @private
  #declare tag HdSctNew
 #> ScoreHolder
@@ -16,19 +19,20 @@
 ## 樽の向きを変える
 	execute unless block ~ ~ ~ minecraft:barrel[facing=up] run setblock ~ ~ ~ minecraft:barrel[facing=up]
 ## 特殊作業台の名前
-	execute if data entity @s {Item:{id:"minecraft:crating_table"}} run data modify block ~ ~ ~ CustomName set value '[{"text":""},{"text":"\\u0020\\u0020\\u0020\\u0020.","color":"gray"},{"text":"特殊クラフト"}]'
+	execute if data entity @s {Item:{id:"minecraft:crafting_table"}} run data modify block ~ ~ ~ CustomName set value '[{"text":""},{"text":"\\u0020\\u0020\\u0020\\u0020.","color":"gray"},{"text":"特殊クラフト"}]'
 	execute if data entity @s {Item:{id:"minecraft:command_block"}} run data modify block ~ ~ ~ CustomName set value '[{"text":""},{"text":"\\u0020\\u0020\\u0020\\u0020.","color":"gray"},{"text":"れしぴ"}]'
 ## ASを召喚
-	execute if data entity @s {Item:{id:"minecraft:crating_table"}} run summon minecraft:armor_stand ~ ~ ~ {Tags:["HdSct","HdSctNew"],Invisible:1b,Marker:1b,Small:1b,ArmorItems:[{},{},{},{id:"minecraft:crafting_table",Count:1b,tag:{Enchantments:[{id:"",lvl:1s}]}}]}
+	execute if data entity @s {Item:{id:"minecraft:crafting_table"}} run summon minecraft:armor_stand ~ ~ ~ {Tags:["HdSct","HdSctNew"],Invisible:1b,Marker:1b,Small:1b,ArmorItems:[{},{},{},{id:"minecraft:crafting_table",Count:1b,tag:{Enchantments:[{id:"",lvl:1s}]}}]}
 	execute if data entity @s {Item:{id:"minecraft:command_block"}} run summon minecraft:armor_stand ~ ~ ~ {Tags:["HdSct","HdSctNew","HdSct.Recipe"],Invisible:1b,Marker:1b,Small:1b,ArmorItems:[{},{},{},{id:"minecraft:command_block",Count:1b,tag:{Enchantments:[{id:"",lvl:1s}]}}]}
-## 個人ストレージを呼ぶ
-	execute as @e[type=minecraft:armor_stand,tag=HdSctNew,distance=..0.001] run function #oh_my_dat:please
-## 「額縁」か「輝く額縁」のどっちを使ったか記録
-	execute store success storage oh_my_dat: _[-4][-4][-4][-4][-4][-4][-4][-4].HdSct.ItemFrame byte 1 if entity @s[type=minecraft:item_frame]
+## 
+	summon minecraft:marker ~ ~ ~ {Tags:["HdSctStorage","HdSctNew"]}
 ## IDを渡す
-	execute store result score @e[type=minecraft:armor_stand,tag=HdSctNew,distance=..0.001] HdSct.ID run scoreboard players add $HdSct.ID HdSct.Global 1
-## ASからTagを外す
-	tag @e[type=minecraft:armor_stand,tag=HdSctNew,distance=..0.001] remove HdSctNew
+	scoreboard players add $HdSct.ID HdSct.Global 1
+	scoreboard players operation @e[type=#hd.sct:sct,tag=HdSctNew,distance=..0.001] HdSct.ID = $HdSct.ID HdSct.Global
+## 「額縁」か「輝く額縁」のどっちを使ったか記録
+	execute store success entity @e[type=minecraft:marker,tag=HdSctStorage,tag=HdSctNew,distance=..0.001,limit=1] data.ItemFrame byte 1 if entity @s[type=minecraft:item_frame]
+## からTagを外す
+	tag @e[type=#hd.sct:sct,tag=HdSctNew,distance=..0.001] remove HdSctNew
 ## 額縁を消す
 	kill @s
 ## 音
