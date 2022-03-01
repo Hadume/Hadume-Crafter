@@ -9,8 +9,8 @@
  #declare score_holder $HdSct.id
  #declare score_holder $HdSct.Tag
 ## Id or Tagがあるか確認
-	execute if data storage hd.sct: AddRecipes[-1].display[].id store result score $HdSct.id HdSct.Temp if data storage hd.sct: AddRecipes[-1].display[].id
-	execute if data storage hd.sct: AddRecipes[-1].display[].Tag store result score $HdSct.Tag HdSct.Temp if data storage hd.sct: AddRecipes[-1].display[].Tag
+	execute if data storage hd.sct: AddRecipes[-1].Items[].id store result score $HdSct.id HdSct.Temp if data storage hd.sct: AddRecipes[-1].Items[].id
+	execute if data storage hd.sct: AddRecipes[-1].Items[].Tag store result score $HdSct.Tag HdSct.Temp if data storage hd.sct: AddRecipes[-1].Items[].Tag
 	execute store result score $HdSct.Elements HdSct.Temp run scoreboard players operation $HdSct.id HdSct.Temp += $HdSct.Tag HdSct.Temp
 	execute if score $HdSct.Lists HdSct.Temp = $HdSct.Elements HdSct.Temp run function hd.sct:recipes/add/4
 ## 一時使用ScoreHolderをリセット
