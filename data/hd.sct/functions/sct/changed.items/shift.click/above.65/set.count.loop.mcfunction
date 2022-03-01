@@ -8,10 +8,10 @@
 ## 完成アイテムをコピー
 	data modify storage hd.sct:lib PlaceItems prepend from storage oh_my_dat: _[-4][-4][-4][-4][-4][-4][-4][-4].HdSct.Using.Recipe.Result
 ## Countを代入
-	execute if score $HdSct.Result.Count HdSct.Temp matches ..63 store result storage hd.sct:lib PlaceItems[0].Count byte 1 run scoreboard players get $HdSct.Result.Count HdSct.Temp
-	execute if score $HdSct.Result.Count HdSct.Temp matches 64.. run data modify storage hd.sct:lib PlaceItems[0].Count set value 64b
+	execute if score $HdSct.Result.Count HdSct.Temp < $HdSct.Count.Max HdSct.Temp store result storage hd.sct:lib PlaceItems[0].Count byte 1 run scoreboard players get $HdSct.Result.Count HdSct.Temp
+	execute if score $HdSct.Result.Count HdSct.Temp >= $HdSct.Count.Max HdSct.Temp store result storage hd.sct:lib PlaceItems[0].Count byte 1 run scoreboard players get $HdSct.Count.Max HdSct.Temp
 ## スコアを減らす
-	scoreboard players remove $HdSct.Result.Count HdSct.Temp 64
+	scoreboard players operation $HdSct.Result.Count HdSct.Temp -= $HdSct.Count.Max HdSct.Temp
 ## Slotを消す
 	data remove storage hd.sct:lib PlaceItems[0].Slot
 ## 渡せたらループ

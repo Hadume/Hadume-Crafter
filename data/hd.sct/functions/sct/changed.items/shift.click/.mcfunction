@@ -10,6 +10,7 @@
  #declare score_holder $HdSct.Least.Number
  #declare score_holder $HdSct.Result.Count
  #declare score_holder $HdSct.Result.Count1
+ #declare score_holder $HdSct.Count.Max
  #declare score_holder $HdSct.Count.0
  #declare score_holder $HdSct.Count.1
  #declare score_holder $HdSct.Slot
@@ -33,6 +34,12 @@
 	execute if data storage oh_my_dat: _[-4][-4][-4][-4][-4][-4][-4][-4].HdSct.Using.Items[{Slot:21b}] run data modify storage hd.sct:temp Materials append from storage oh_my_dat: _[-4][-4][-4][-4][-4][-4][-4][-4].HdSct.Using.Items[{Slot:21b}]
 ## レシピのアイテムをコピー
 	data modify storage hd.sct:temp RecipeItems set from storage oh_my_dat: _[-4][-4][-4][-4][-4][-4][-4][-4].HdSct.Using.Recipe.Items
+## 
+	execute as @e[type=minecraft:armor_stand,tag=HdSctThis] run data modify entity @s HandItems[0] set from storage oh_my_dat: _[-4][-4][-4][-4][-4][-4][-4][-4].HdSct.Using.Recipe.Result
+## 
+	execute as @e[type=minecraft:armor_stand,tag=HdSctThis] unless predicate hd.sct:stack/1 unless predicate hd.sct:stack/16 run scoreboard players set $HdSct.Count.Max HdSct.Temp 64
+	execute as @e[type=minecraft:armor_stand,tag=HdSctThis] if predicate hd.sct:stack/1 run scoreboard players set $HdSct.Count.Max HdSct.Temp 1
+	execute as @e[type=minecraft:armor_stand,tag=HdSctThis] if predicate hd.sct:stack/16 run scoreboard players set $HdSct.Count.Max HdSct.Temp 16
 ## 最大何回プレイヤーに完成アイテムを渡せるか確認する
 	scoreboard players set $HdSct.Least.Number HdSct.Temp 2147483647
 	data modify storage hd.sct:temp Materials append from storage hd.sct: Blank[]
@@ -47,10 +54,10 @@
 	scoreboard players operation $HdSct.Result.Count HdSct.Temp *= $HdSct.Least.Number HdSct.Temp
 ## Countを上書き
 	execute store result storage hd.sct:temp InventoryCopy[-1].Count byte 1 run scoreboard players operation $HdSct.Count.0 HdSct.Temp += $HdSct.Result.Count HdSct.Temp
-	execute if score $HdSct.Count.0 HdSct.Temp matches ..63 store result storage hd.sct:temp InventoryCopy[-1].Count byte 1 run scoreboard players operation $HdSct.Count.0 HdSct.Temp -= $HdSct.Result.Count1 HdSct.Temp
-	execute if score $HdSct.Count.0 HdSct.Temp matches 64.. run data modify storage hd.sct:temp InventoryCopy[-1].Count set value 64b
+	execute if score $HdSct.Count.0 HdSct.Temp <= $HdSct.Count.Max HdSct.Temp store result storage hd.sct:temp InventoryCopy[-1].Count byte 1 run scoreboard players operation $HdSct.Count.0 HdSct.Temp -= $HdSct.Result.Count1 HdSct.Temp
+	execute if score $HdSct.Count.0 HdSct.Temp > $HdSct.Count.Max HdSct.Temp store result storage hd.sct:temp InventoryCopy[-1].Count byte 1 run scoreboard players get $HdSct.Count.Max HdSct.Temp
 ## 上記の計算で Count > 64 だったら
-	execute if score $HdSct.Count.0 HdSct.Temp matches 64.. run function hd.sct:sct/changed.items/shift.click/above.65/
+	execute if score $HdSct.Count.0 HdSct.Temp > $HdSct.Count.Max HdSct.Temp run function hd.sct:sct/changed.items/shift.click/above.65/
 ## アイテムを返す
 	data modify storage hd.sct:lib PlaceItems append from storage hd.sct:temp InventoryCopy[-1]
 	function hd.sct:lib/place.items/
