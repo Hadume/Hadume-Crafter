@@ -15,12 +15,12 @@
 	execute if data block ~ ~ ~ Items[] positioned ~ ~1 ~ run function hd.sct:lib/return.items/
 ## 樽の向きを変える
 	execute unless block ~ ~ ~ minecraft:barrel[facing=up] run setblock ~ ~ ~ minecraft:barrel[facing=up]
-## 特殊作業台UIを作る
-	function hd.sct:block/ui
 ## 特殊作業台の名前
-	execute if data storage hd.sct: SCT.Name run data modify block ~ ~ ~ CustomName set value '[{"text":""},{"text":"\\u0020\\u0020\\u0020\\u0020.","color":"gray"},{"text":"特殊クラフト"}]'
+	execute if data entity @s {Item:{id:"minecraft:crating_table"}} run data modify block ~ ~ ~ CustomName set value '[{"text":""},{"text":"\\u0020\\u0020\\u0020\\u0020.","color":"gray"},{"text":"特殊クラフト"}]'
+	execute if data entity @s {Item:{id:"minecraft:command_block"}} run data modify block ~ ~ ~ CustomName set value '[{"text":""},{"text":"\\u0020\\u0020\\u0020\\u0020.","color":"gray"},{"text":"れしぴ"}]'
 ## ASを召喚
-	summon minecraft:armor_stand ~ ~ ~ {Tags:["HdSct","HdSctNew"],Invisible:1b,Marker:1b,Small:1b,ArmorItems:[{},{},{},{id:"minecraft:crafting_table",Count:1b,tag:{Enchantments:[{id:"",lvl:1s}]}}]}
+	execute if data entity @s {Item:{id:"minecraft:crating_table"}} run summon minecraft:armor_stand ~ ~ ~ {Tags:["HdSct","HdSctNew"],Invisible:1b,Marker:1b,Small:1b,ArmorItems:[{},{},{},{id:"minecraft:crafting_table",Count:1b,tag:{Enchantments:[{id:"",lvl:1s}]}}]}
+	execute if data entity @s {Item:{id:"minecraft:command_block"}} run summon minecraft:armor_stand ~ ~ ~ {Tags:["HdSct","HdSctNew","HdSct.Recipe"],Invisible:1b,Marker:1b,Small:1b,ArmorItems:[{},{},{},{id:"minecraft:command_block",Count:1b,tag:{Enchantments:[{id:"",lvl:1s}]}}]}
 ## 個人ストレージを呼ぶ
 	execute as @e[type=minecraft:armor_stand,tag=HdSctNew,distance=..0.001] run function #oh_my_dat:please
 ## 「額縁」か「輝く額縁」のどっちを使ったか記録

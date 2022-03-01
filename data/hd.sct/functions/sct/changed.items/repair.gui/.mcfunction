@@ -2,7 +2,9 @@
 #
 # GUIを直す
 #
-# @within function hd.sct:sct/changed.items/not.recipe_book
+# @within function
+#   hd.sct:sct/changed.items/not.recipe_book
+#   hd.sct:sct/add.recipe/
 
 ## データを消す
 	data remove storage hd.sct:temp ItemsCopy[{tag:{HdSct:1b}}]
@@ -15,7 +17,8 @@
 	execute if data storage hd.sct:temp ItemsCopy[{Slot:19b}] run data remove storage hd.sct:temp ItemsCopy[{Slot:19b}]
 	execute if data storage hd.sct:temp ItemsCopy[{Slot:20b}] run data remove storage hd.sct:temp ItemsCopy[{Slot:20b}]
 	execute if data storage hd.sct:temp ItemsCopy[{Slot:21b}] run data remove storage hd.sct:temp ItemsCopy[{Slot:21b}]
-	execute if data storage oh_my_dat: _[-4][-4][-4][-4][-4][-4][-4][-4].HdSct.Using.Recipe run data remove storage hd.sct:temp ItemsCopy[{Slot:15b}]
+	execute if entity @s[tag=!HdSct.Recipe] if data storage oh_my_dat: _[-4][-4][-4][-4][-4][-4][-4][-4].HdSct.Using.Recipe run data remove storage hd.sct:temp ItemsCopy[{Slot:15b}]
+	execute if entity @s[tag=HdSct.Recipe] run data remove storage hd.sct:temp ItemsCopy[{Slot:15b}]
 ## アイテムを返す
 	execute if data storage hd.sct:temp ItemsCopy[] run data modify storage hd.sct:lib ReturnItems set from storage hd.sct:temp ItemsCopy
 	execute if data storage hd.sct:temp ItemsCopy[] positioned ~ ~1 ~ run function hd.sct:lib/return.items/
