@@ -11,7 +11,7 @@
 							"function": "minecraft:set_name",
 							"entity": "this",
 							"name": {
-								"text": "レシピブックを閉じる",
+								"text": "閉じる",
 								"color": "green",
 								"italic": false
 							}

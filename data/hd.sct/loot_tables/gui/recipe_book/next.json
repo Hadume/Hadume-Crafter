@@ -11,7 +11,7 @@
 							"function": "minecraft:set_name",
 							"entity": "this",
 							"name": {
-								"text": "次のページ",
+								"text": "次",
 								"color": "yellow",
 								"italic": false
 							}
