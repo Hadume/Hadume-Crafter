@@ -9,7 +9,7 @@
 # @within function hd.sct:sct/changed.items/recipe_book/display.materials
  #declare score_holder $HdSct.Items.Changed
 ## SCTの中身をコピー
-	data modify storage hd.sct:temp RecipesCopy set from entity @e[predicate=hd.sct:storage,limit=1] data.Using.RecipeBook
+	data modify storage hd.sct:temp RecipesCopy set from entity @s data.Using.RecipeBook
 ## 
 	execute if data storage hd.sct:temp ItemsCopy[{Slot:0b,tag:{HdSct:1b}}] run data modify storage hd.sct:temp RecipesCopy append value {_:1b}
 	execute if data storage hd.sct:temp ItemsCopy[{Slot:1b,tag:{HdSct:1b}}] if data storage hd.sct:temp RecipesCopy[-16] run data modify storage hd.sct:temp RecipesCopy append value {_:1b}

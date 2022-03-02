@@ -18,7 +18,7 @@
 ## 特殊作業台を設置する
 	execute as @e[type=#hd.sct:item_frames] if predicate hd.sct:item.frame unless data entity @s Item.tag at @s positioned ~ ~-1 ~ if block ~ ~ ~ minecraft:barrel unless entity @e[type=minecraft:armor_stand,tag=HdSct,distance=..0.001] run function hd.sct:block/set
 ## SCTで常時実行
-	execute as @e[type=minecraft:armor_stand,tag=HdSct] at @s run function hd.sct:sct/tick
+	execute as @e[type=minecraft:marker,tag=HdSct] at @s run function hd.sct:sct/tick
 
 ## SCTアイテムを消す
 	execute as @e[type=minecraft:item] if data entity @s Item.tag.HdSct run kill @s

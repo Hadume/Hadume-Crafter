@@ -12,5 +12,3 @@
 	execute if entity @s[tag=HdSctUsing] if block ~ ~ ~ minecraft:barrel[open=false] run function hd.sct:block/unlock
 ## 
 	execute if block ~ ~-1 ~ minecraft:hopper run data modify block ~ ~ ~ TransferCooldown set value -2147483648
-## 回す
-	tp @s ~ ~ ~ ~10 ~

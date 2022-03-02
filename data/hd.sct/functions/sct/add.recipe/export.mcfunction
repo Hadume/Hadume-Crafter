@@ -26,4 +26,4 @@
 ## GUIを戻す
 	loot replace block ~ ~ ~ container.17 loot hd.sct:gui/export
 ## SCTの中身を取得
-	data modify entity @e[predicate=hd.sct:storage,limit=1] data.Using.Items set from block ~ ~ ~ Items
+	data modify entity @s data.Using.Items set from block ~ ~ ~ Items

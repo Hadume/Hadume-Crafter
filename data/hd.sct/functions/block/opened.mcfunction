@@ -22,18 +22,18 @@
 		execute anchored eyes positioned ^ ^ ^6.4 facing entity @s eyes run tp @e[type=minecraft:marker,tag=HdSctPos] ~ ~ ~ ~ ~
 	### 樽にTagを付ける
 		tag @s add HdSctPos
-		execute as @e[type=minecraft:marker,tag=HdSctPos] at @s positioned ^ ^ ^3.2 rotated as @e[tag=HdSctPos] positioned ^ ^ ^1.6 rotated as @e[tag=HdSctPos] positioned ^ ^ ^0.8 rotated as @e[tag=HdSctPos] positioned ^ ^ ^0.4 rotated as @e[tag=HdSctPos] positioned ^ ^ ^0.2 rotated as @e[tag=HdSctPos] positioned ^ ^ ^0.1 rotated as @e[tag=HdSctPos] positioned ^ ^ ^0.05 rotated as @e[tag=HdSctPos] unless block ~ ~ ~ minecraft:air align xyz positioned ~0.5 ~0.03125 ~0.5 as @e[type=minecraft:armor_stand,tag=HdSct,distance=..0.001] if block ~ ~ ~ minecraft:barrel[open=true] run tag @s add HdSctThis
+		execute as @e[type=minecraft:marker,tag=HdSctPos] at @s positioned ^ ^ ^3.2 rotated as @e[tag=HdSctPos] positioned ^ ^ ^1.6 rotated as @e[tag=HdSctPos] positioned ^ ^ ^0.8 rotated as @e[tag=HdSctPos] positioned ^ ^ ^0.4 rotated as @e[tag=HdSctPos] positioned ^ ^ ^0.2 rotated as @e[tag=HdSctPos] positioned ^ ^ ^0.1 rotated as @e[tag=HdSctPos] positioned ^ ^ ^0.05 rotated as @e[tag=HdSctPos] unless block ~ ~ ~ minecraft:air align xyz positioned ~0.5 ~0.03125 ~0.5 as @e[type=minecraft:marker,tag=HdSct,distance=..0.001] if block ~ ~ ~ minecraft:barrel[open=true] run tag @s add HdSctThis
 		tag @s remove HdSctPos
 	### Markerを消す
 		execute as @e[type=minecraft:marker,tag=HdSctPos] run kill @s
 ## プレイヤーにIDを渡す
-	scoreboard players operation @s HdSct.ID = @e[type=minecraft:armor_stand,tag=HdSctThis,sort=nearest,limit=1] HdSct.ID
+	scoreboard players operation @s HdSct.ID = @e[type=minecraft:marker,tag=HdSctThis,sort=nearest,limit=1] HdSct.ID
 ## SCTに鍵をかける
-	execute as @e[type=minecraft:armor_stand,tag=HdSctThis] at @s run data modify block ~ ~ ~ Lock set value "§§"
-	execute as @e[type=minecraft:armor_stand,tag=HdSctThis] run tag @s add HdSctUsing
+	execute as @e[type=minecraft:marker,tag=HdSctThis] at @s run data modify block ~ ~ ~ Lock set value "§§"
+	execute as @e[type=minecraft:marker,tag=HdSctThis] run tag @s add HdSctUsing
 ## 
-	execute as @e[type=minecraft:armor_stand,tag=HdSctThis] at @s run function hd.sct:block/ui
+	execute as @e[type=minecraft:marker,tag=HdSctThis] at @s run function hd.sct:block/ui
 ## SCTの仮Tagを外す
-	execute as @e[type=minecraft:armor_stand,tag=HdSctThis] run tag @s remove HdSctThis
+	execute as @e[type=minecraft:marker,tag=HdSctThis] run tag @s remove HdSctThis
 ## 音を消す
 	stopsound @s * minecraft:block.barrel.open

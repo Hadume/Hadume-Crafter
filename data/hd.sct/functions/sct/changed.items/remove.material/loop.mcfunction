@@ -7,7 +7,7 @@
 
 ## Countを取得
 	execute store result score $HdSct.Count.1 HdSct.Temp run data get storage hd.sct:temp Materials[-10].Count
-	execute store result score $HdSct.Count.2 HdSct.Temp run data get entity @e[predicate=hd.sct:storage,limit=1] data.Using.Recipe.Items[-10].Count
+	execute store result score $HdSct.Count.2 HdSct.Temp run data get entity @s data.Using.Recipe.Items[-10].Count
 ## 一括で渡したら
 	execute if score $HdSct.Least.Number HdSct.Temp matches 1.. run scoreboard players operation $HdSct.Count.2 HdSct.Temp *= $HdSct.Least.Number HdSct.Temp
 ## アイテムを減らさない
@@ -20,6 +20,6 @@
 	execute store result storage hd.sct:temp Materials[-10].Count byte 1 run scoreboard players operation $HdSct.Count.1 HdSct.Temp -= $HdSct.Count.2 HdSct.Temp
 ## データを消す
 	data remove storage hd.sct:temp Materials[-1]
-	data remove entity @e[predicate=hd.sct:storage,limit=1] data.Using.Recipe.Items[-1]
+	data remove entity @s data.Using.Recipe.Items[-1]
 ## まだデータがあったらループ
 	execute if data storage hd.sct:temp Materials[-10] run function hd.sct:sct/changed.items/remove.material/loop

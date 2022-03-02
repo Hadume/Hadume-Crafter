@@ -5,9 +5,6 @@
 # @within function hd.sct:tick
 
 #> Tags
-# @internal
- #declare tag HdSctStorage
-#> Tags
 # @private
  #declare tag HdSctNew
 #> ScoreHolder
@@ -25,12 +22,12 @@
 	execute if data entity @s {Item:{id:"minecraft:crafting_table"}} run summon minecraft:armor_stand ~ ~ ~ {Tags:["HdSct","HdSctNew"],Invisible:1b,Marker:1b,Small:1b,ArmorItems:[{},{},{},{id:"minecraft:crafting_table",Count:1b,tag:{Enchantments:[{id:"",lvl:1s}]}}]}
 	execute if data entity @s {Item:{id:"minecraft:command_block"}} run summon minecraft:armor_stand ~ ~ ~ {Tags:["HdSct","HdSctNew","HdSct.Recipe"],Invisible:1b,Marker:1b,Small:1b,ArmorItems:[{},{},{},{id:"minecraft:command_block",Count:1b,tag:{Enchantments:[{id:"",lvl:1s}]}}]}
 ## 
-	summon minecraft:marker ~ ~ ~ {Tags:["HdSctStorage","HdSctNew"]}
+	summon minecraft:marker ~ ~ ~ {Tags:["HdSctNew","HdSct"]}
 ## IDを渡す
 	scoreboard players add $HdSct.ID HdSct.Global 1
 	scoreboard players operation @e[type=#hd.sct:sct,tag=HdSctNew,distance=..0.001] HdSct.ID = $HdSct.ID HdSct.Global
 ## 「額縁」か「輝く額縁」のどっちを使ったか記録
-	execute store success entity @e[type=minecraft:marker,tag=HdSctStorage,tag=HdSctNew,distance=..0.001,limit=1] data.ItemFrame byte 1 if entity @s[type=minecraft:item_frame]
+	execute store success entity @e[type=minecraft:marker,tag=HdSctNew,distance=0.001,limit=1] data.ItemFrame byte 1 if entity @s[type=minecraft:item_frame]
 ## からTagを外す
 	tag @e[type=#hd.sct:sct,tag=HdSctNew,distance=..0.001] remove HdSctNew
 ## 額縁を消す

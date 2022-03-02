@@ -5,8 +5,8 @@
 # @within function hd.sct:sct/changed.items/not.recipe_book
 
 ## レシピデータを消す
-	execute if data entity @e[predicate=hd.sct:storage,limit=1] data.Using.Recipe run data remove storage hd.sct:temp ItemsCopy[{Slot:15b}]
-	execute if data entity @e[predicate=hd.sct:storage,limit=1] data.Using.Recipe run data remove entity @e[predicate=hd.sct:storage,limit=1] data.Using.Recipe
+	execute if data entity @s data.Using.Recipe run data remove storage hd.sct:temp ItemsCopy[{Slot:15b}]
+	execute if data entity @s data.Using.Recipe run data remove entity @s data.Using.Recipe
 ## アイテムを返す
 	data remove storage hd.sct:temp ItemsCopy[{tag:{HdSct:1b}}]
 	data modify storage hd.sct:lib ReturnItems set from storage hd.sct:temp ItemsCopy
@@ -30,6 +30,6 @@
 	item replace block ~ ~ ~ container.25 with minecraft:air
 	item replace block ~ ~ ~ container.26 with minecraft:air
 ## 
-	data modify entity @e[predicate=hd.sct:storage,limit=1] data.Using.RecipeBook set from storage hd.sct:recipe_book _[0].Data
+	data modify entity @s data.Using.RecipeBook set from storage hd.sct:recipe_book _[0].Data
 ## 
 	scoreboard players set @s HdSct.Page 1

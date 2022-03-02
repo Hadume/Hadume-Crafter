@@ -30,6 +30,6 @@
 
 	data modify storage hd.sct:temp NewItems append from storage hd.sct:temp RecipesCopy[]
 
-	data modify entity @e[predicate=hd.sct:storage,limit=1] data.Using.RecipeBook set from storage hd.sct:temp RecipesCopy
+	data modify entity @s data.Using.RecipeBook set from storage hd.sct:temp RecipesCopy
 
 	scoreboard players set $HdSct.Items.Changed HdSct.Temp 1
