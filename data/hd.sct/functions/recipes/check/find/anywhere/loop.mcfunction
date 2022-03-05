@@ -5,9 +5,11 @@
 # @within function hd.sct:recipes/check/find/anywhere/
 # @private
 
+## データを移しておく
+	data modify storage hd.sct:temp ItemStash set from storage hd.sct:temp RecipesCopy[-1].Items[-10]
 ## アイテムを移す
-	data modify storage hd.sct:lib ComparedItem1 set from storage hd.sct:temp ItemsCopy[-1]
-	data modify storage hd.sct:lib ComparedItem2 set from storage hd.sct:temp RecipesCopy[-1].Items[-1]
+	data modify storage hd.sct:lib ComparedItem1 set from storage hd.sct:temp ItemsCopy[-10]
+	data modify storage hd.sct:lib ComparedItem2 set from storage hd.sct:temp RecipesCopy[-1].Items[-10]
 ## 同じアイテムか確認
 	function hd.sct:lib/compare.item/count
 ## アイテムが違ったら、データを戻しておく
