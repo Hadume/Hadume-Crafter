@@ -36,6 +36,6 @@
 ## レシピの確認
 	function hd.sct:recipes/check/find/normal.loop
 ## 横軸の鏡写しがあったら、データを戻しておく
-	execute if score $HdSct.Same.Recipe HdSct.Temp matches 0 unless data storage hd.sct:temp ItemsCopy[-10] unless data storage hd.sct:temp RecipesCopy[-1].Items[-10] if data storage hd.sct:temp RecipesCopy[-1].Options.Mirror_HOR run data modify storage hd.sct:temp ItemsCopy append from storage hd.sct: Blank[]
+	execute if score $HdSct.lib.Different HdSct.Temp matches 0 unless data storage hd.sct:temp ItemsCopy[-10] unless data storage hd.sct:temp RecipesCopy[-1].Items[-10] if data storage hd.sct:temp RecipesCopy[-1].Options.Mirror_HOR run data modify storage hd.sct:temp ItemsCopy append from storage hd.sct: Blank[]
 ## 一時使用Storageをリセット
 	data remove storage hd.sct:lib ShiftSlot

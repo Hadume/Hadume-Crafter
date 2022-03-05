@@ -4,9 +4,6 @@
 #
 # @within function hd.sct:recipes/check/
 
-#> ScoreHolder
-# @within function hd.sct:recipes/check/find/**
- #declare score_holder $HdSct.Same.Recipe
 ## Slotをずらす
 	data modify storage hd.sct:lib ShiftSlot set from storage hd.sct:temp ItemsCopy
 	function hd.sct:lib/shift.slot/
@@ -26,13 +23,11 @@
 ## レシピの確認
 	execute if data storage hd.sct:temp RecipesCopy[] run function hd.sct:recipes/check/find/loop
 ## 同じレシピがあったら、次の工程を実行する
-	execute if score $HdSct.Same.Recipe HdSct.Temp matches 0 if data storage hd.sct:temp RecipesCopy[] run function hd.sct:recipes/check/set.complete/
+	execute if score $HdSct.lib.Different HdSct.Temp matches 0 if data storage hd.sct:temp RecipesCopy[] run function hd.sct:recipes/check/set.complete/
 ## 同じレシピが無かったら、完成アイテムSlotを変える
 	execute unless data storage hd.sct:temp RecipesCopy[] run function hd.sct:recipes/check/reset.complete
-## 一時使用ScoreHolderのリセット
-	scoreboard players reset $HdSct.Same.Recipe
-	scoreboard players reset $HdSct.Count.1
-	scoreboard players reset $HdSct.Count.2
+## ライブラリのリセット
+	function hd.sct:lib/compare.item/reset
 ## 一時使用ストレージのリセット
 	data remove storage hd.sct:lib ShiftSlot
 	data remove storage hd.sct:temp RecipesCopy

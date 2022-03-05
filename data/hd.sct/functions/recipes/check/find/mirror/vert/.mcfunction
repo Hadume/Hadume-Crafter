@@ -9,4 +9,4 @@
 ## 通常の確認
 	function hd.sct:recipes/check/find/normal.loop
 ## 違ったら、縦軸に鏡写しをする
-	execute if score $HdSct.Same.Recipe HdSct.Temp matches 1 run function hd.sct:recipes/check/find/mirror/vert/move
+	execute if score $HdSct.lib.Different HdSct.Temp matches 1 run function hd.sct:recipes/check/find/mirror/vert/move
