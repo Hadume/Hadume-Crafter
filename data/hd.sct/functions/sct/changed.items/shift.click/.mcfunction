@@ -21,8 +21,6 @@
 ## インベントリーのコピー
 	data modify storage hd.sct:temp InventoryCopy set from entity @s Inventory
 	data modify storage hd.sct:temp InventoryPast set from entity @e[type=minecraft:marker,tag=HdSctThis,limit=1] data.Using.Inventory
-	data remove storage hd.sct:temp InventoryCopy[{Count:64b}]
-	data remove storage hd.sct:temp InventoryPast[{Count:64b}]
 ## 増えたアイテムを特定する
 	execute if data storage hd.sct:temp InventoryPast[] run function hd.sct:sct/changed.items/shift.click/find.changed.item.loop
 ## 特殊作業台内のアイテムのコピー
@@ -56,17 +54,13 @@
 	execute store result score $HdSct.Count.0 HdSct.Temp run data get storage hd.sct:temp InventoryCopy[-1].Count
 ## 渡す完成アイテムの数を計算する
 	scoreboard players operation $HdSct.Result.Count HdSct.Temp *= $HdSct.Least.Number HdSct.Temp
+	scoreboard players operation $HdSct.Result.Count HdSct.Temp -= $HdSct.Result.Count1 HdSct.Temp
 ## 
 	scoreboard players operation $HdSct.Count.Max.1 HdSct.Temp -= $HdSct.Count.0 HdSct.Temp
-## Countを上書き
-	execute if score $HdSct.Count.Max.1 HdSct.Temp >= $HdSct.Result.Count HdSct.Temp store result storage hd.sct:temp InventoryCopy[-1].Count byte 1 run scoreboard players operation $HdSct.Count.0 HdSct.Temp += $HdSct.Result.Count HdSct.Temp
-	execute if score $HdSct.Count.Max.1 HdSct.Temp >= $HdSct.Result.Count HdSct.Temp store result storage hd.sct:temp InventoryCopy[-1].Count byte 1 run scoreboard players operation $HdSct.Count.0 HdSct.Temp -= $HdSct.Result.Count1 HdSct.Temp
-
-	execute if score $HdSct.Count.Max.1 HdSct.Temp < $HdSct.Result.Count HdSct.Temp store result storage hd.sct:temp InventoryCopy[-1].Count byte 1 run scoreboard players get $HdSct.Count.Max HdSct.Temp
-	execute if score $HdSct.Count.Max.1 HdSct.Temp < $HdSct.Result.Count HdSct.Temp run scoreboard players operation $HdSct.Count.0 HdSct.Temp -= $HdSct.Result.Count1 HdSct.Temp
-	execute if score $HdSct.Count.Max.1 HdSct.Temp < $HdSct.Result.Count HdSct.Temp run scoreboard players operation $HdSct.Result.Count HdSct.Temp += $HdSct.Count.0 HdSct.Temp
-## 上記の計算で Count > 64 だったら
-	execute if score $HdSct.Count.Max.1 HdSct.Temp < $HdSct.Result.Count HdSct.Temp run function hd.sct:sct/changed.items/shift.click/above.65/
+## 
+	execute store result storage hd.sct:temp InventoryCopy[-1].Count byte 1 run scoreboard players operation $HdSct.Count.0 HdSct.Temp += $HdSct.Result.Count HdSct.Temp
+## 
+	execute if score $HdSct.Count.0 HdSct.Temp > $HdSct.Count.Max HdSct.Temp run function hd.sct:sct/changed.items/shift.click/above.65/
 ## アイテムを返す
 	data modify storage hd.sct:lib PlaceItems append from storage hd.sct:temp InventoryCopy[-1]
 	function hd.sct:lib/place.items/
@@ -89,3 +83,4 @@
 	data remove storage hd.sct:temp InventoryCopy
 	data remove storage hd.sct:temp InventoryPast
 	data remove storage hd.sct:temp RecipeItems
+	data remove storage hd.sct:temp SameItems
