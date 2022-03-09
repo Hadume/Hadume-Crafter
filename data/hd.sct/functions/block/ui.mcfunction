@@ -25,7 +25,7 @@
 	execute unless data storage hd.sct:temp ItemsCopy[{Slot:12b}] run item replace block ~ ~ ~ container.12 with minecraft:air
 	execute unless data storage hd.sct:temp ItemsCopy[{Slot:13b,tag:{HdSct:1b}}] run loot replace block ~ ~ ~ container.13 loot hd.sct:gui/air
 	execute unless data storage hd.sct:temp ItemsCopy[{Slot:14b,tag:{HdSct:1b}}] run loot replace block ~ ~ ~ container.14 loot hd.sct:gui/air
-	execute unless data storage oh_my_dat: _[-4][-4][-4][-4][-4][-4][-4][-4].HdSct.Using.Recipe unless data storage hd.sct:temp ItemsCopy[{Slot:15b,tag:{HdSct:1b}}] if entity @s[tag=!HdSct.Recipe] run loot replace block ~ ~ ~ container.15 loot hd.sct:gui/air
+	execute unless data entity @s data.Using.Recipe unless data storage hd.sct:temp ItemsCopy[{Slot:15b,tag:{HdSct:1b}}] if entity @s[tag=!HdSct.Recipe] run loot replace block ~ ~ ~ container.15 loot hd.sct:gui/air
 	execute unless data storage hd.sct:temp ItemsCopy[{Slot:16b,tag:{HdSct:1b}}] run loot replace block ~ ~ ~ container.16 loot hd.sct:gui/air
 	execute unless data storage hd.sct:temp ItemsCopy[{Slot:17b,tag:{HdSct:1b}}] if entity @s[tag=!HdSct.Recipe] run loot replace block ~ ~ ~ container.17 loot hd.sct:gui/air
 	execute unless data storage hd.sct:temp ItemsCopy[{Slot:17b,tag:{HdSct:1b}}] if entity @s[tag=HdSct.Recipe] run loot replace block ~ ~ ~ container.17 loot hd.sct:gui/export
