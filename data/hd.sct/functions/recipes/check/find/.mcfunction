@@ -32,4 +32,3 @@
 	data remove storage hd.sct:lib ShiftSlot
 	data remove storage hd.sct:temp RecipesCopy
 	execute if data storage hd.sct:temp ItemStash run data remove storage hd.sct:temp ItemStash
-	execute if data storage hd.sct:temp TagsCopy run data remove storage hd.sct:temp TagsCopy

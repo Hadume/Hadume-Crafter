@@ -6,7 +6,7 @@
 
 #> 
 # @private
-# @within function hd.sct:sct/changed.items/recipe_book/display.materials
+# @within function hd.sct:sct/changed.items/recipe_book/display.materials/
  #declare score_holder $HdSct.Items.Changed
 ## SCTの中身をコピー
 	data modify storage hd.sct:temp RecipesCopy set from entity @s data.Using.RecipeBook
@@ -27,7 +27,7 @@
 	execute if data storage hd.sct:temp ItemsCopy[{Slot:21b,tag:{HdSct:1b}}] if data storage hd.sct:temp RecipesCopy[-28] run data modify storage hd.sct:temp RecipesCopy append value {_:1b}
 	execute if data storage hd.sct:temp ItemsCopy[{Slot:22b,tag:{HdSct:1b}}] if data storage hd.sct:temp RecipesCopy[-29] run data modify storage hd.sct:temp RecipesCopy append value {_:1b}
 ## 
-	execute if data storage hd.sct:temp RecipesCopy[-15].tag.HdSctRecipe run function hd.sct:sct/changed.items/recipe_book/display.materials
+	execute if data storage hd.sct:temp RecipesCopy[-15].tag.HdSctRecipe run function hd.sct:sct/changed.items/recipe_book/display.materials/
 ## 
 	execute unless data storage hd.sct:temp ItemsCopy[{Slot:5b,tag:{HdSct:1b}}] run function hd.sct:sct/changed.items/recipe_book/prev
 	execute unless data storage hd.sct:temp ItemsCopy[{Slot:23b,tag:{HdSct:1b}}] run function hd.sct:sct/changed.items/recipe_book/next
@@ -51,7 +51,7 @@
 	execute unless score $HdSct.Items.Changed HdSct.Temp matches 1 if data storage hd.sct:temp ItemsCopy[] unless data storage hd.sct:temp RecipesCopy[{tag:{HdSctSelected:1b}}].tag.HdSctRecipe[{Slot:25b}] run item replace block ~ ~ ~ container.25 with minecraft:air
 	execute unless score $HdSct.Items.Changed HdSct.Temp matches 1 if data storage hd.sct:temp ItemsCopy[] unless data storage hd.sct:temp RecipesCopy[{tag:{HdSctSelected:1b}}].tag.HdSctRecipe[{Slot:26b}] run item replace block ~ ~ ~ container.26 with minecraft:air
 
-	execute unless score $HdSct.Items.Changed HdSct.Temp matches 1 run data modify storage hd.sct:temp NewItems append from storage oh_my_dat: _[-4][-4][-4][-4][-4][-4][-4][-4].HdSct.Using.RecipeBook[]
+	execute unless score $HdSct.Items.Changed HdSct.Temp matches 1 run data modify storage hd.sct:temp NewItems append from entity @s data.Using.RecipeBook[]
 	execute unless score $HdSct.Items.Changed HdSct.Temp matches 1 run data modify storage hd.sct:temp NewItems append from storage hd.sct:temp RecipesCopy[{tag:{HdSctSelected:1b}}].tag.HdSctRecipe[]
 ## 
 	data modify block ~ ~ ~ Items append from storage hd.sct:temp NewItems[]

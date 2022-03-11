@@ -17,3 +17,17 @@
 	execute unless data storage hd.sct:temp PageCopy[-2] run loot replace block ~ ~ ~ container.23 loot hd.sct:gui/recipe_book/cant.next
 	execute if score @s HdSct.Page matches 2.. run loot replace block ~ ~ ~ container.5 loot hd.sct:gui/recipe_book/prev
 	execute if score @s HdSct.Page matches 1 run loot replace block ~ ~ ~ container.5 loot hd.sct:gui/recipe_book/cant.prev
+	execute if data storage hd.sct:temp RecipesCopy[{tag:{HdSctSelected:1b}}] run data remove storage hd.sct:temp RecipesCopy[{tag:{HdSctSelected:1b}}].tag.HdSctRecipe[].tag.HdSct
+	execute if data storage hd.sct:temp RecipesCopy[{tag:{HdSctSelected:1b}}] run data remove storage hd.sct:temp RecipesCopy[{tag:{HdSctSelected:1b}}].tag.display.Lore[-1]
+	execute if data storage hd.sct:temp RecipesCopy[{tag:{HdSctSelected:1b}}] run data remove storage hd.sct:temp RecipesCopy[{tag:{HdSctSelected:1b}}].tag.HdSctSelected
+	data remove entity @s data.Using.RecipeBookTag
+## 
+	item replace block ~ ~ ~ container.6 with minecraft:air
+	item replace block ~ ~ ~ container.7 with minecraft:air
+	item replace block ~ ~ ~ container.8 with minecraft:air
+	item replace block ~ ~ ~ container.15 with minecraft:air
+	item replace block ~ ~ ~ container.16 with minecraft:air
+	item replace block ~ ~ ~ container.17 with minecraft:air
+	item replace block ~ ~ ~ container.24 with minecraft:air
+	item replace block ~ ~ ~ container.25 with minecraft:air
+	item replace block ~ ~ ~ container.26 with minecraft:air

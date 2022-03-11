@@ -13,9 +13,10 @@
 # @internal
  #declare score_holder $HdSct.lib.Different
 ## 
-	data remove storage hd.sct:lib ComparedItem1
-	data remove storage hd.sct:lib ComparedItem2
+	execute if data storage hd.sct:lib ComparedItem1 run data remove storage hd.sct:lib ComparedItem1
+	execute if data storage hd.sct:lib ComparedItem2 run data remove storage hd.sct:lib ComparedItem2
+	execute if data storage hd.sct:lib TagsCopy run data remove storage hd.sct:lib TagsCopy
 ## 
-	scoreboard players reset $HdSct.lib.Different
-	scoreboard players reset $HdSct.Count.1
-	scoreboard players reset $HdSct.Count.2
+	execute if score $HdSct.lib.Different HdSct.Temp matches 1 run scoreboard players reset $HdSct.lib.Different
+	execute if score $HdSct.Count.1 HdSct.Temp matches ..2147483647 run scoreboard players reset $HdSct.Count.1
+	execute if score $HdSct.Count.2 HdSct.Temp matches ..2147483647 run scoreboard players reset $HdSct.Count.2
