@@ -7,9 +7,9 @@
 #> Tags
 # @private
 # @within function
-#   hd.sct:sct/using
-#   hd.sct:block/ui/
-#   hd.sct:sct/changed.items/repair.gui
+#   hd.sct:main/using
+#   hd.sct:main/ui/
+#   hd.sct:main/crafter/repair.gui
  #declare tag HdSctRM
 ## 
 	data modify block ~ ~ ~ CustomName set value '[{"text":""},{"text":"\\u0020\\u0020\\u0020\\u0020.","color":"gray"},{"text":"れしぴ"}]'

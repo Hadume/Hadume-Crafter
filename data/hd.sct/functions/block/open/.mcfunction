@@ -7,8 +7,8 @@
 #> Tags
 # @within function hd.sct:block/open/*
 # @within function hd.sct:block/unlock
-# @within function hd.sct:sct/tick
-# @within function hd.sct:sct/inventory_changed
+# @within function hd.sct:main/
+# @within function hd.sct:inventory_changed
  #declare tag HdSctUsing
 #> Tags
 # @private

@@ -19,6 +19,6 @@
         }
     },
     "rewards": {
-        "function": "hd.sct:sct/inventory_changed"
+        "function": "hd.sct:inventory_changed"
     }
 }

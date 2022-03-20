@@ -16,18 +16,7 @@
  #declare storage hd.sct:recipe_book
  #declare storage hd.sct.asset:recipes
 #> Tags
-# @within function
-#   hd.sct:tick
-#   hd.sct:block/***
-#   hd.sct:sct/changed.items/remove.material/*
-#   hd.sct:sct/inventory_changed
-#   hd.sct:sct/changed.items/shift.click/
-#   hd.sct:sct/changed.items/shift.click/as
-#   hd.sct:sct/changed.items/shift.click/above.65/
-#   hd.sct:sct/changed.items/shift.click/above.65/adjust.count
-#   hd.sct:sct/changed.items/shift.click/above.65/set.count.loop1
-#   hd.sct:sct/add.recipe/check
-#   hd.sct:sct/add.recipe/export
+# @internal
  #declare tag HdSct
  #declare tag HdSctThis
 ## 初期化完了
@@ -50,4 +39,4 @@
 ## レシピ追加
 	function #hd.sct.asset:recipes
 	function #hd.sct.asset:tags
-	function hd.sct:recipes/add/
+	function hd.sct:add.recipes/

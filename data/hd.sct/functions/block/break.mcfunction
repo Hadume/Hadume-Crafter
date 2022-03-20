@@ -2,7 +2,7 @@
 #
 # 特殊作業台を破壊する
 #
-# @within function hd.sct:sct/tick
+# @within function hd.sct:main/
 
 ## 
 	tag @s add HdSctThis

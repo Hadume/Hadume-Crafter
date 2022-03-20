@@ -7,7 +7,7 @@
 ## SCTに鍵をかける
 	data modify block ~ ~ ~ Lock set value "§§"
 ## 
-	function hd.sct:block/ui/
+	function hd.sct:main/ui/
 ## 
 	data modify entity @s data.Using.Items set from block ~ ~ ~ Items
 ## 

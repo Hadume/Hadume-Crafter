@@ -2,7 +2,7 @@
 #
 # SCTの鍵を開ける
 #
-# @within function hd.sct:sct/tick
+# @within function hd.sct:main/
 
 ## 
 	data remove block ~ ~ ~ Lock
