@@ -18,7 +18,7 @@
 ## 
 	function hd.sct:main/recipe_book/reset/
 ## 一時使用Storageをリセット
-	data remove storage hd.sct:temp AddRecipeCopy
+	data remove storage hd.sct:temp AddRecipe
 	execute if data storage hd.sct:lib ShiftSlot run data remove storage hd.sct:lib ShiftSlot
 	data remove storage hd.sct: AddRecipes
 ## 一時使用ScoreHolderをリセット

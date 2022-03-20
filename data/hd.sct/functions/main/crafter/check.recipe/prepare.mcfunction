@@ -31,4 +31,5 @@
 ## 一時使用ストレージのリセット
 	data remove storage hd.sct:lib ShiftSlot
 	data remove storage hd.sct:temp RecipesCopy
+	execute if data storage hd.sct:temp RecipeItems run data remove storage hd.sct:temp RecipeItems
 	execute if data storage hd.sct:temp ItemStash run data remove storage hd.sct:temp ItemStash

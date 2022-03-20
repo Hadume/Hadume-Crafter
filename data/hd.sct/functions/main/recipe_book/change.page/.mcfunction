@@ -21,3 +21,5 @@
 	execute if data storage hd.sct:temp RecipesCopy[{tag:{HdSct:{Recipe:{Selected:1b}}}}] run data remove storage hd.sct:temp RecipesCopy[{tag:{HdSct:{Recipe:{Selected:1b}}}}].tag.HdSct.Recipe.Selected
 ## 
 	data remove entity @s data.Using.RecipeBookTag
+## 一時使用Storageをリセット
+	data remove storage hd.sct:temp PageCopy
