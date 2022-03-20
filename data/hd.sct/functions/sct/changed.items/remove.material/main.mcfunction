@@ -20,21 +20,25 @@
 	execute if data storage hd.sct:temp ItemsCopy[{Slot:19b}] run data modify storage hd.sct:temp Materials append from storage hd.sct:temp ItemsCopy[{Slot:19b}]
 	execute if data storage hd.sct:temp ItemsCopy[{Slot:20b}] run data modify storage hd.sct:temp Materials append from storage hd.sct:temp ItemsCopy[{Slot:20b}]
 	execute if data storage hd.sct:temp ItemsCopy[{Slot:21b}] run data modify storage hd.sct:temp Materials append from storage hd.sct:temp ItemsCopy[{Slot:21b}]
+## 
+	data modify storage hd.sct:temp RecipeItemsCopy append from entity @s data.Using.Recipe.Items[]
 ## 素材アイテムに仮アイテムを追加する
 	data modify storage hd.sct:temp Materials append from storage hd.sct: Blank[]
-	data modify entity @s data.Using.Recipe.Items append from storage hd.sct: Blank[]
+	data modify storage hd.sct:temp RecipeItemsCopy append from storage hd.sct: Blank[]
+## 
+	tag @s add HdSctThis
+	execute as @e[type=minecraft:armor_stand,tag=HdSct,distance=..0.001] if score @s HdSct.ID = @e[type=minecraft:marker,tag=HdSct,distance=..0.001,limit=1] HdSct.ID run tag @s add HdSctThis
 ## アイテムのCountを減らす
-	function hd.sct:sct/changed.items/remove.material/loop
+	execute as @e[type=minecraft:armor_stand,tag=HdSctThis,distance=..0.001] run function hd.sct:sct/changed.items/remove.material/as
 ## 仮データを消す
-	data remove storage hd.sct:temp Materials[{_:1b}]
+	execute if data storage hd.sct:temp Materials[{_:1b}] run data remove storage hd.sct:temp Materials[{_:1b}]
 ## 特殊作業台の中のアイテムを上書きする
 	data modify block ~ ~ ~ Items append from storage hd.sct:temp Materials[]
 ## 個人ストレージ内の特殊作業台の中のアイテムを上書きする
 	data modify storage hd.sct:temp ItemsCopy set from block ~ ~ ~ Items
 ## 一時使用Storageのリセット
 	data remove storage hd.sct:temp Materials
+	data remove storage hd.sct:temp RecipeItemsCopy
 ## 一時使用ScoreHolderをリセット
 	scoreboard players reset $HdSct.Count.1
 	scoreboard players reset $HdSct.Count.2
-## 
-	item replace entity @s weapon.mainhand with minecraft:air

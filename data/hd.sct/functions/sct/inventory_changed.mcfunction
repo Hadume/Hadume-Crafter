@@ -12,7 +12,7 @@
 	execute at @e[type=minecraft:marker,tag=HdSctThis] if data entity @e[type=minecraft:marker,tag=HdSctThis,distance=..0.001,limit=1] data.Using.Recipe unless data block ~ ~ ~ Items[{Slot:15b}] run function hd.sct:sct/changed.items/shift.click/
 ## ストレージにインベントリーを保存
 	data modify entity @e[type=minecraft:marker,tag=HdSctThis,limit=1] data.Using.Inventory set from entity @s Inventory
-## 進捗を剥奪
-	advancement revoke @s only hd.sct:inventory_changed
 ## 
 	tag @e[type=minecraft:marker,tag=HdSctThis,limit=1] remove HdSctThis
+## 進捗を剥奪
+	advancement revoke @s only hd.sct:inventory_changed

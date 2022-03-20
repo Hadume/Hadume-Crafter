@@ -5,15 +5,13 @@
 # @within function hd.sct:recipes/add/
 # @private
 
-#> Temp
-# @within function hd.sct:recipes/add/*
- #declare score_holder $HdSct.Lists
- #declare score_holder $HdSct.Elements
+## レシピをコピー
+	data modify storage hd.sct:temp AddRecipe set from storage hd.sct: AddRecipes[-1]
 ## リストの大きさを取得
-	execute if data storage hd.sct: AddRecipes[-1].Items[] if data storage hd.sct: AddRecipes[-1].Result.id if data storage hd.sct: AddRecipes[-1].Result.Count run function hd.sct:recipes/add/2
+	execute if data storage hd.sct:temp AddRecipe.Items[] if data storage hd.sct:temp AddRecipe.Result.id if data storage hd.sct:temp AddRecipe.Result.Count run function hd.sct:recipes/add/2
 ## レシピが追加出来なかったら
-	execute unless score $HdSct.Lists HdSct.Temp = $HdSct.Elements HdSct.Temp run scoreboard players add $HdSct.Fail HdSct.Temp 1
-	execute unless score $HdSct.Lists HdSct.Temp = $HdSct.Elements HdSct.Temp run data modify storage hd.sct: FailRecipes append from storage hd.sct: AddRecipes[-1]
+	execute unless score $HdSct.List HdSct.Temp = $HdSct.Element HdSct.Temp run scoreboard players add $HdSct.Fail HdSct.Temp 1
+	execute unless score $HdSct.List HdSct.Temp = $HdSct.Element HdSct.Temp run data modify storage hd.sct: FailRecipes append from storage hd.sct:temp AddRecipe
 ## データを消す
 	data remove storage hd.sct: AddRecipes[-1]
 ## データがまだあったらループ

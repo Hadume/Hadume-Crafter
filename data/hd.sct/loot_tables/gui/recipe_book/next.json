@@ -18,7 +18,7 @@
 						},
 						{
 							"function": "minecraft:set_nbt",
-							"tag": "{HdSct:1b}"
+							"tag": "{HdSct:{}}"
 						}
 					]
 				}

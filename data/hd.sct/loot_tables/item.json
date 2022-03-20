@@ -1,0 +1,49 @@
+{
+	"pools": [
+		{
+			"rolls": 1.0,
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:crafting_table"
+				}
+			]
+		},
+		{
+			"rolls": 1.0,
+			"entries": [
+				{
+					"type": "minecraft:alternatives",
+					"children": [
+						{
+							"type": "minecraft:item",
+							"conditions": [
+								{
+									"condition": "minecraft:entity_properties",
+									"entity": "this",
+									"predicate": {
+										"nbt": "{data:{HdSct:{ItemFrame:1b}}}"
+									}
+								}
+							],
+							"name": "minecraft:item_frame"
+						},
+						{
+							"type": "minecraft:item",
+							"conditions": [
+								{
+									"condition": "minecraft:entity_properties",
+									"entity": "this",
+									"predicate": {
+										"nbt": "{data:{HdSct:{ItemFrame:0b}}}"
+									}
+								}
+							],
+							"name": "minecraft:glow_item_frame"
+						}
+					]
+				}
+			]
+		}
+	]
+}

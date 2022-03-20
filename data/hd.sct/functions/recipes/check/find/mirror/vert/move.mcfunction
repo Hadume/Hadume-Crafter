@@ -31,11 +31,11 @@
 	data modify storage hd.sct:temp RecipesCopy[-1].Items set from storage hd.sct:lib ShiftSlot
 ## 空白を入れる
 	data modify storage hd.sct:temp RecipesCopy[-1].Items append from storage hd.sct: Blank[]
-	data remove storage hd.sct:temp ItemsCopy[{_:1b}]
+	execute if data storage hd.sct:temp ItemsCopy[{_:1b}] run data remove storage hd.sct:temp ItemsCopy[{_:1b}]
 	data modify storage hd.sct:temp ItemsCopy append from storage hd.sct: Blank[]
 ## レシピの確認
 	function hd.sct:recipes/check/find/normal.loop
 ## 横軸の鏡写しがあったら、データを戻しておく
-	execute if score $HdSct.lib.Different HdSct.Temp matches 0 unless data storage hd.sct:temp ItemsCopy[-10] unless data storage hd.sct:temp RecipesCopy[-1].Items[-10] if data storage hd.sct:temp RecipesCopy[-1].Options.Mirror_HOR run data modify storage hd.sct:temp ItemsCopy append from storage hd.sct: Blank[]
+	execute if score $HdSct.lib.Different HdSct.Temp matches 0 if data storage hd.sct:temp RecipesCopy[-1].Options.Mirror_HOR run data modify storage hd.sct:temp ItemsCopy append from storage hd.sct: Blank[]
 ## 一時使用Storageをリセット
 	data remove storage hd.sct:lib ShiftSlot

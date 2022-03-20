@@ -16,6 +16,6 @@
 ## データを消す
 	execute if score $HdSct.lib.Different HdSct.Temp matches 1 run data remove storage hd.sct:temp RecipesCopy[-1]
 ## データを戻しておく
-	data remove storage hd.sct:temp ItemsCopy[{_:1b}]
+	execute if data storage hd.sct:temp ItemsCopy[{_:1b}] run data remove storage hd.sct:temp ItemsCopy[{_:1b}]
 ## まだ確認するデータがあったら、ループさせる
 	execute if data storage hd.sct:temp RecipesCopy[] if score $HdSct.lib.Different HdSct.Temp matches 1 run function hd.sct:recipes/check/find/loop

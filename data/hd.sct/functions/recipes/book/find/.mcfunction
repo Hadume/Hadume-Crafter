@@ -2,8 +2,7 @@
 #
 # ページを探す
 #
-# @within function hd.sct:sct/changed.items/recipe_book/next
-# @within function hd.sct:sct/changed.items/recipe_book/prev
+# @within function hd.sct:sct/changed.items/recipe_book/change.page/
 
 #> ScoreHolder
 # @within function hd.sct:recipes/book/find/*

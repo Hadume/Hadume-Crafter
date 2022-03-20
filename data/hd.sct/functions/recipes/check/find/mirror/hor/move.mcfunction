@@ -30,7 +30,7 @@
 	data modify storage hd.sct:temp RecipesCopy[-1].Items set from storage hd.sct:lib ShiftSlot
 ## 空白を入れる
 	data modify storage hd.sct:temp RecipesCopy[-1].Items append from storage hd.sct: Blank[]
-	data remove storage hd.sct:temp ItemsCopy[{_:1b}]
+	execute if data storage hd.sct:temp ItemsCopy[{_:1b}] run data remove storage hd.sct:temp ItemsCopy[{_:1b}]
 	data modify storage hd.sct:temp ItemsCopy append from storage hd.sct: Blank[]
 ## レシピの確認
 	function hd.sct:recipes/check/find/normal.loop

@@ -5,7 +5,7 @@
 # @within function hd.sct:sct/changed.items/not.recipe_book
 
 ## 特殊作業台のUIのアイテムを消す
-	data remove storage hd.sct:temp ItemsCopy[{tag:{HdSct:1b}}]
+	data remove storage hd.sct:temp ItemsCopy[{tag:{HdSct:{}}}]
 	execute if data entity @s data.Using.Recipe run data remove storage hd.sct:temp ItemsCopy[{Slot:15b}]
 ## 特殊作業台の中にアイテムがなかったら、完成アイテムSlotのアイテムを変える
 	execute unless data storage hd.sct:temp ItemsCopy[] if data entity @s data.Using.Recipe run function hd.sct:recipes/check/reset.complete

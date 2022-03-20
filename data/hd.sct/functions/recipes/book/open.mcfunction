@@ -8,9 +8,9 @@
 	execute if data entity @s data.Using.Recipe run data remove storage hd.sct:temp ItemsCopy[{Slot:15b}]
 	execute if data entity @s data.Using.Recipe run data remove entity @s data.Using.Recipe
 ## アイテムを返す
-	data remove storage hd.sct:temp ItemsCopy[{tag:{HdSct:1b}}]
-	data modify storage hd.sct:lib ReturnItems set from storage hd.sct:temp ItemsCopy
-	execute positioned ~ ~1 ~ run function hd.sct:lib/return.items/
+	data remove storage hd.sct:temp ItemsCopy[{tag:{HdSct:{}}}]
+	execute if data storage hd.sct:temp ItemsCopy[] run data modify storage hd.sct:lib ReturnItems set from storage hd.sct:temp ItemsCopy
+	execute if data storage hd.sct:temp ItemsCopy[] positioned ~ ~1 ~ run function hd.sct:lib/return.items/
 ## レシピブックが無かったら生成
 	execute unless data storage hd.sct:recipe_book _[] run function hd.sct:recipes/book/make/
 ## 作業台にレシピブックデータを入れる

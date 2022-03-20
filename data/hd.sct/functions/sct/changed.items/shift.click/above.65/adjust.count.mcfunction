@@ -9,7 +9,7 @@
  #declare score_holder $HdSct.Give.Result
  #declare score_holder $HdSct.Inventory.Slot1
 ## 調整するための準備
-	execute store result score $HdSct.Give.Result HdSct.Temp run data get entity @e[type=minecraft:marker,tag=HdSctThis,limit=1] data.Using.Recipe.Result.Count
+	execute store result score $HdSct.Give.Result HdSct.Temp run data get entity @e[type=minecraft:marker,tag=HdSctThis,distance=..0.001,limit=1] data.Using.Recipe.Result.Count
 	scoreboard players operation $HdSct.Inventory.Slot1 HdSct.Temp = $HdSct.Inventory.Slot HdSct.Temp
 ## 渡しすぎた完成アイテムを減らす
 	scoreboard players operation $HdSct.Inventory.Slot1 HdSct.Temp %= $HdSct.Give.Result HdSct.Temp
