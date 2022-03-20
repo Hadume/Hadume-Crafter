@@ -20,6 +20,8 @@
 	execute if data storage hd.sct:temp ItemsCopy[-7] unless data storage hd.sct:temp ItemsCopy[-8] run data modify storage hd.sct:temp RecipesCopy append from storage hd.sct.asset:recipes _[-3][]
 	execute if data storage hd.sct:temp ItemsCopy[-8] unless data storage hd.sct:temp ItemsCopy[-9] run data modify storage hd.sct:temp RecipesCopy append from storage hd.sct.asset:recipes _[-2][]
 	execute if data storage hd.sct:temp ItemsCopy[-9] run data modify storage hd.sct:temp RecipesCopy append from storage hd.sct.asset:recipes _[-1][]
+## 
+	data modify storage hd.sct:lib RemoveElements set value 1b
 ## レシピの確認
 	execute if data storage hd.sct:temp RecipesCopy[] run function hd.sct:main/crafter/check.recipe/loop
 ## 同じレシピがあったら、次の工程を実行する
