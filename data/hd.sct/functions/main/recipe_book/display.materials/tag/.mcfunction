@@ -3,7 +3,7 @@
 # Tagを代入
 #
 # @within function hd.sct:main/recipe_book/display.materials/
-say Tagを表示
+
 ## データを移動
 	data modify storage hd.sct:temp SelectedRecipe append from storage hd.sct:temp RecipesCopy[-15].tag.HdSct.Recipe.Items[]
 ## 仮要素を追加

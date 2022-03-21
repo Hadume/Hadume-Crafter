@@ -22,7 +22,7 @@
 									"condition": "minecraft:entity_properties",
 									"entity": "this",
 									"predicate": {
-										"nbt": "{data:{HdSct:{ItemFrame:1b}}}"
+										"nbt": "{data:{ItemFrame:1b}}"
 									}
 								}
 							],
@@ -35,7 +35,7 @@
 									"condition": "minecraft:entity_properties",
 									"entity": "this",
 									"predicate": {
-										"nbt": "{data:{HdSct:{ItemFrame:0b}}}"
+										"nbt": "{data:{ItemFrame:0b}}"
 									}
 								}
 							],
