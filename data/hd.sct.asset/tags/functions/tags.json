@@ -10,10 +10,12 @@
         "hd.sct.asset:tags/minecraft/oak_logs",
         "hd.sct.asset:tags/minecraft/planks",
         "hd.sct.asset:tags/minecraft/sand",
+        "hd.sct.asset:tags/minecraft/soul_fire_base_blocks",
         "hd.sct.asset:tags/minecraft/spruce_logs",
         "hd.sct.asset:tags/minecraft/stone_crafting_materials",
         "hd.sct.asset:tags/minecraft/warped_stems",
         "hd.sct.asset:tags/minecraft/wooden_slabs",
+        "hd.sct.asset:tags/minecraft/wool",
         "hd.sct.asset:tags/sct/purpur_materials",
         "hd.sct.asset:tags/sct/quartz_blocks"
     ]
