@@ -25,9 +25,9 @@
 ## 
 	execute if data storage hd.sct:temp RecipesCopy[-15].tag.HdSct.Recipe run function hd.sct:main/recipe_book/display.materials/
 ## 
-	execute unless data storage hd.sct:temp ItemsCopy[{Slot:5b,tag:{HdSct:{}}}] run function hd.sct:main/recipe_book/change.page/prev
-	execute unless data storage hd.sct:temp ItemsCopy[{Slot:23b,tag:{HdSct:{}}}] run function hd.sct:main/recipe_book/change.page/next/
-	execute unless data storage hd.sct:temp ItemsCopy[{Slot:14b,tag:{HdSct:{}}}] run function hd.sct:main/recipe_book/change.page/return
+	execute unless data storage hd.sct:temp ItemsCopy[{Slot:5b,tag:{HdSct:{}}}] run function hd.sct:main/recipe_book/page/change/prev
+	execute unless data storage hd.sct:temp ItemsCopy[{Slot:23b,tag:{HdSct:{}}}] run function hd.sct:main/recipe_book/page/change/next/
+	execute unless data storage hd.sct:temp ItemsCopy[{Slot:14b,tag:{HdSct:{}}}] run function hd.sct:main/recipe_book/page/change/return
 ## 
 	execute if data storage hd.sct:temp ItemsCopy[] run data modify storage hd.sct:temp NewItems append from entity @s data.Using.RecipeBook[]
 	execute if data storage hd.sct:temp ItemsCopy[] if data storage hd.sct:temp RecipesCopy[].tag.HdSct.Recipe.Selected run data modify storage hd.sct:temp NewItems append from storage hd.sct:temp RecipesCopy[{tag:{HdSct:{Recipe:{Selected:1b}}}}].tag.HdSct.Recipe.Items[]

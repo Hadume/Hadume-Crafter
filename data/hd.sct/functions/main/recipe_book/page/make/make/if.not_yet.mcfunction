@@ -1,8 +1,8 @@
-#> hd.sct:main/recipe_book/make/make/if.not_yet
+#> hd.sct:main/recipe_book/page/make/make/if.not_yet
 #
 # 
 #
-# @within function hd.sct:main/recipe_book/make/make/loop
+# @within function hd.sct:main/recipe_book/page/make/make/loop
 
 ## 
 	data modify storage hd.sct:recipe_book _[-1].Data append from storage hd.sct:recipe_book NotYet[0].Result

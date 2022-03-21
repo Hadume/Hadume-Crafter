@@ -1,10 +1,10 @@
-#> hd.sct:main/recipe_book/make/
+#> hd.sct:main/recipe_book/page/make/
 #
 # レシピブックのページを作る
 #
 # @within function
 #   hd.sct:main/recipe_book/open
-#   hd.sct:main/recipe_book/change.page/next/make.page
+#   hd.sct:main/recipe_book/page/change/next/make.page
 
 #> ScoreHolder
 # @private
@@ -12,7 +12,7 @@
  #declare score_holder $HdSct.Page
 #> ScoreHolder
 # @private
-# @within function hd.sct:main/recipe_book/make/make/loop
+# @within function hd.sct:main/recipe_book/page/make/make/loop
  #declare score_holder $HdSct.Slot
 ## ページデータを追加
 	data modify storage hd.sct:recipe_book _ append value {}
@@ -21,6 +21,6 @@
 ## Slotの調整
 	scoreboard players set $HdSct.Slot HdSct.Temp -1
 ## データを設定
-	function hd.sct:main/recipe_book/make/make/loop
+	function hd.sct:main/recipe_book/page/make/make/loop
 ## 一時使用ScoreHolderをリセット
 	scoreboard players reset $HdSct.Slot

@@ -1,12 +1,12 @@
-#> hd.sct:main/recipe_book/make/make/loop
+#> hd.sct:main/recipe_book/page/make/make/loop
 #
 # データを設定
 #
-# @within function hd.sct:main/recipe_book/make/
+# @within function hd.sct:main/recipe_book/page/make/
 # @private
 
 ## データを追加
-	execute if data storage hd.sct:recipe_book NotYet[] run function hd.sct:main/recipe_book/make/make/if.not_yet
+	execute if data storage hd.sct:recipe_book NotYet[] run function hd.sct:main/recipe_book/page/make/make/if.not_yet
 ## 空白データを追加
 	execute unless data storage hd.sct:recipe_book NotYet[] run data modify storage hd.sct:recipe_book _[-1].Data append value {id:"minecraft:black_stained_glass_pane",Count:1b,tag:{display:{Name:'{"text": ""}'},HdSct:{}}}
 ## Slotの調整
@@ -16,4 +16,4 @@
 ## データを消す
 	data remove storage hd.sct:recipe_book NotYet[0]
 ## ループ
-	execute if score $HdSct.Slot HdSct.Temp matches ..21 run function hd.sct:main/recipe_book/make/make/loop
+	execute if score $HdSct.Slot HdSct.Temp matches ..21 run function hd.sct:main/recipe_book/page/make/make/loop

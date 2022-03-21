@@ -1,4 +1,4 @@
-#> hd.sct:main/recipe_book/change.page/return
+#> hd.sct:main/recipe_book/page/change/return
 #
 # 
 #

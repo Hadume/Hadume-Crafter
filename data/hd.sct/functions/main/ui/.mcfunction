@@ -4,7 +4,7 @@
 #
 # @within function
 #   hd.sct:block/set
-#   hd.sct:main/recipe_book/change.page/return
+#   hd.sct:main/recipe_book/page/change/return
 #   hd.sct:main/crafter/repair.gui
 #   hd.sct:block/open/sct
 

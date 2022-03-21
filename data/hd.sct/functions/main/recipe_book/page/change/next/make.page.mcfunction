@@ -1,11 +1,11 @@
-#> hd.sct:main/recipe_book/change.page/next/make.page
+#> hd.sct:main/recipe_book/page/change/next/make.page
 #
 # 
 #
-# @within function hd.sct:main/recipe_book/change.page/next/
+# @within function hd.sct:main/recipe_book/page/change/next/
 
 ## やっぱ、ページ作っちゃうも～～ん
-	function hd.sct:main/recipe_book/make/
+	function hd.sct:main/recipe_book/page/make/
 ## 
 	data modify entity @s data.Using.RecipeBook set from storage hd.sct:recipe_book _[-1].Data
 ## 

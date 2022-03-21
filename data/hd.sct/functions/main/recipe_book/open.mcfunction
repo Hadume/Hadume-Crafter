@@ -12,7 +12,7 @@
 	execute if data storage hd.sct:temp ItemsCopy[] run data modify storage hd.sct:lib ReturnItems set from storage hd.sct:temp ItemsCopy
 	execute if data storage hd.sct:temp ItemsCopy[] positioned ~ ~1 ~ run function hd.sct:lib/return.items/
 ## レシピブックが無かったら生成
-	execute unless data storage hd.sct:recipe_book _[] run function hd.sct:main/recipe_book/make/
+	execute unless data storage hd.sct:recipe_book _[] run function hd.sct:main/recipe_book/page/make/
 ## 作業台にレシピブックデータを入れる
 	data modify block ~ ~ ~ Items append from storage hd.sct:recipe_book _[0].Data[]
 	loot replace block ~ ~ ~ container.5 loot hd.sct:gui/recipe_book/cant.prev

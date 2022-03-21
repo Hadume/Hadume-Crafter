@@ -3,7 +3,7 @@
 # 
 #
 # @within function
-#   hd.sct:main/recipe_book/change.page/*
+#   hd.sct:main/recipe_book/page/change/*
 #   hd.sct:main/recipe_book/display.materials/
 
 ## 
