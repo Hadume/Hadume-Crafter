@@ -5,7 +5,7 @@
 # @within function hd.sct:tick
 
 ## SCTを破壊
-	execute unless block ~ ~ ~ minecraft:barrel[facing=up] run function hd.sct:block/break
+	execute unless block ~ ~ ~ minecraft:barrel[facing=up] run function hd.sct:block/break/
 ## SCTを閉じる
 	execute if entity @s[tag=HdSctUsing] if block ~ ~ ~ minecraft:barrel[open=false] run function hd.sct:block/unlock
 ## SCTが開かれていたら
