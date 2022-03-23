@@ -9,4 +9,4 @@
 ## 
 	function hd.sct:lib/compare.item/id/tag/
 ## Tagがあったら、追加しておく
-	execute if score $HdSct.lib.Different HdSct.Temp matches 0 run function hd.sct:main/recipe_book/display.materials/tag/pick.tag/1
+	execute if score $HdSct.lib.Different HdSct.Temp matches 0 if data storage hd.sct:lib TagsCopy[-1].Value[] run function hd.sct:main/recipe_book/display.materials/tag/pick.tag/1
