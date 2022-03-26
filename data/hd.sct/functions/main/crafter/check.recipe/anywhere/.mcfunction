@@ -2,7 +2,7 @@
 #
 # レシピ確認の準備
 #
-# @within function hd.sct:main/crafter/check.recipe/loop
+# @within function hd.sct:main/crafter/check.recipe/checking/loop
 
 ## レシピ確認
 	function hd.sct:main/crafter/check.recipe/anywhere/loop

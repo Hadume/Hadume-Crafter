@@ -11,7 +11,7 @@
  #declare score_holder $HdSct.Succeed
  #declare score_holder $HdSct.Fail
 ## 
-	function hd.sct:add.recipes/1.loop
+	execute if data storage hd.sct: AddRecipes[] run function hd.sct:add.recipes/1.loop
 ## レシピ追加の情報を表示
 	execute if score $HdSct.Succeed HdSct.Temp matches 1.. run tellraw @a [{"storage": "hd.sct:","nbt": "tellrawName"},{"text": " "},{"score": {"name": "$HdSct.Succeed","objective": "HdSct.Temp"},"color": "green","bold": true},{"text": "個","color": "green","bold": true},{"text": "のレシピが追加されました。"}]
 	execute if score $HdSct.Fail HdSct.Temp matches 1.. run tellraw @a [{"storage": "hd.sct:","nbt": "tellrawName"},{"text": " "},{"score": {"name": "$HdSct.Fail","objective": "HdSct.Temp"},"color": "red","bold": true},{"text": "個","color": "red","bold": true},{"text": "のレシピが追加できませんでした。\n"},{"storage": "hd.sct:","nbt": "tellrawName"},{"text": " "},{"text": "/data get storage hd.sct: FailRecipes","clickEvent": {"action": "suggest_command","value": "/data get storage hd.sct: FailRecipes"},"color": "yellow"},{"text": "\n"},{"storage": "hd.sct:","nbt": "tellrawName"},{"text": " よりレシピがあっているかご確認ください。"}]

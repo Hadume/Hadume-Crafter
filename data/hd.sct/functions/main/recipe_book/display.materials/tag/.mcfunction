@@ -11,8 +11,8 @@
 ## Tagを探す
 	function hd.sct:main/recipe_book/display.materials/tag/loop
 ## データを返す
-	data modify entity @s data.Using.RecipeBookTag.Data set from storage hd.sct:temp RecipeBookTag
-	data modify entity @s data.Using.RecipeBookTag.Count set value 1b
+	execute if data storage hd.sct:temp RecipeBookTag run data modify entity @s data.Using.RecipeBookTag.Data set from storage hd.sct:temp RecipeBookTag
+	execute if data storage hd.sct:temp RecipeBookTag run data modify entity @s data.Using.RecipeBookTag.Count set value 1b
 ## 一時使用Storageをリセット
 	data remove storage hd.sct:temp SelectedRecipe
 	data remove storage hd.sct:temp RecipeBookTag

@@ -5,6 +5,7 @@
 # @within function
 #   hd.sct:main/recipe_book/page/change/*
 #   hd.sct:main/recipe_book/display.materials/
+#   hd.sct:main/recipe_book/page/change/next/make.page
 
 ## 
 	execute if data storage hd.sct:temp ItemsCopy[{Slot:6b}] run item replace block ~ ~ ~ container.6 with minecraft:air

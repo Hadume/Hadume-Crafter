@@ -19,4 +19,4 @@
 	data remove storage hd.sct:recipe_book NotYet
 	data modify storage hd.sct:recipe_book NotYet append from storage hd.sct.asset:recipes _[][]
 ## 前の数値と今の数値を同じにする
-	scoreboard players operation $HdSct.Recipes.Before HdSct.Global = $HdSct.Recipes.Now HdSct.Global
+	execute store result score $HdSct.Recipes.Before HdSct.Global if data storage hd.sct.asset:recipes _[][]

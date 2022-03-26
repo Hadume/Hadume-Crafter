@@ -11,3 +11,6 @@
 	execute if data storage hd.sct:lib RemoveDamage if data storage hd.sct:lib ComparedItem2.tag.damage run data remove storage hd.sct:lib ComparedItem2.tag.damage
 ## 
 	execute store success score $HdSct.lib.Different HdSct.Temp run data modify storage hd.sct:lib ComparedItem2.tag set from storage hd.sct:lib ComparedItem1.tag
+## 
+	execute unless data storage hd.sct:lib ComparedItem1.tag run scoreboard players set $HdSct.lib.Different HdSct.Temp 1
+	execute unless data storage hd.sct:lib ComparedItem2.tag run scoreboard players set $HdSct.lib.Different HdSct.Temp 1

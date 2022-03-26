@@ -4,7 +4,7 @@
 #
 # @private
 # @within function
-#   hd.sct:main/crafter/check.recipe/loop
+#   hd.sct:main/crafter/check.recipe/checking/unless.anywhere
 #   hd.sct:main/crafter/check.recipe/mirror/*/*
 
 ## アイテムを移す

@@ -1,21 +1,21 @@
-#> hd.sct:main/crafter/check.recipe/mirror/vert/move
+#> hd.sct:main/crafter/check.recipe/mirror/vert/corner
 #
-# 縦軸に鏡写しをする
+# 
 #
-# @within function hd.sct:main/crafter/check.recipe/mirror/vert/
+# @within function hd.sct:main/crafter/check.recipe/mirror/vert/move
 
 ## 仮に移しておく
-	execute if data storage hd.sct:temp RecipeItems[{Slot:1b}] run data modify storage hd.sct:temp RecipeItems[{Slot:1b}].Slot set value 4b
-	execute if data storage hd.sct:temp RecipeItems[{Slot:10b}] run data modify storage hd.sct:temp RecipeItems[{Slot:10b}].Slot set value 13b
-	execute if data storage hd.sct:temp RecipeItems[{Slot:19b}] run data modify storage hd.sct:temp RecipeItems[{Slot:19b}].Slot set value 22b
-## 写す
-	execute if data storage hd.sct:temp RecipeItems[{Slot:3b}] run data modify storage hd.sct:temp RecipeItems[{Slot:3b}].Slot set value 1b
-	execute if data storage hd.sct:temp RecipeItems[{Slot:12b}] run data modify storage hd.sct:temp RecipeItems[{Slot:12b}].Slot set value 10b
-	execute if data storage hd.sct:temp RecipeItems[{Slot:21b}] run data modify storage hd.sct:temp RecipeItems[{Slot:21b}].Slot set value 19b
-	execute if data storage hd.sct:temp RecipeItems[{Slot:4b}] run data modify storage hd.sct:temp RecipeItems[{Slot:4b}].Slot set value 3b
-	execute if data storage hd.sct:temp RecipeItems[{Slot:13b}] run data modify storage hd.sct:temp RecipeItems[{Slot:13b}].Slot set value 12b
-	execute if data storage hd.sct:temp RecipeItems[{Slot:22b}] run data modify storage hd.sct:temp RecipeItems[{Slot:22b}].Slot set value 21b
-## 順番を整える
+	execute if data storage hd.sct:temp RecipeItems[{Slot:1b}] run data modify storage hd.sct:temp RecipeItems[{Slot:1b}].Slot set value 28b
+	execute if data storage hd.sct:temp RecipeItems[{Slot:2b}] run data modify storage hd.sct:temp RecipeItems[{Slot:2b}].Slot set value 29b
+	execute if data storage hd.sct:temp RecipeItems[{Slot:3b}] run data modify storage hd.sct:temp RecipeItems[{Slot:3b}].Slot set value 30b
+## 移す
+	execute if data storage hd.sct:temp RecipeItems[{Slot:19b}] run data modify storage hd.sct:temp RecipeItems[{Slot:19b}].Slot set value 1b
+	execute if data storage hd.sct:temp RecipeItems[{Slot:20b}] run data modify storage hd.sct:temp RecipeItems[{Slot:20b}].Slot set value 2b
+	execute if data storage hd.sct:temp RecipeItems[{Slot:21b}] run data modify storage hd.sct:temp RecipeItems[{Slot:21b}].Slot set value 3b
+	execute if data storage hd.sct:temp RecipeItems[{Slot:28b}] run data modify storage hd.sct:temp RecipeItems[{Slot:28b}].Slot set value 19b
+	execute if data storage hd.sct:temp RecipeItems[{Slot:29b}] run data modify storage hd.sct:temp RecipeItems[{Slot:29b}].Slot set value 20b
+	execute if data storage hd.sct:temp RecipeItems[{Slot:30b}] run data modify storage hd.sct:temp RecipeItems[{Slot:30b}].Slot set value 21b
+## 移す
 	execute if data storage hd.sct:temp RecipeItems[{Slot:1b}] run data modify storage hd.sct:lib ShiftSlot append from storage hd.sct:temp RecipeItems[{Slot:1b}]
 	execute if data storage hd.sct:temp RecipeItems[{Slot:2b}] run data modify storage hd.sct:lib ShiftSlot append from storage hd.sct:temp RecipeItems[{Slot:2b}]
 	execute if data storage hd.sct:temp RecipeItems[{Slot:3b}] run data modify storage hd.sct:lib ShiftSlot append from storage hd.sct:temp RecipeItems[{Slot:3b}]
@@ -34,6 +34,6 @@
 	execute if data storage hd.sct:temp ItemsCopy[{_:1b}] run data remove storage hd.sct:temp ItemsCopy[{_:1b}]
 	data modify storage hd.sct:temp ItemsCopy append from storage hd.sct: Blank[]
 ## レシピの確認
-	function hd.sct:main/crafter/check.recipe/normal.loop
-## 横軸の鏡写しがあったら、データを戻しておく
-	execute unless data storage hd.sct:temp MirrorLoop if score $HdSct.lib.Different HdSct.Temp matches 1 if data storage hd.sct:temp RecipesCopy[-1].Options.Mirror_HOR run function hd.sct:main/crafter/check.recipe/mirror/vert/corner
+	data modify storage hd.sct:temp MirrorLoop set value 1b
+	function hd.sct:main/crafter/check.recipe/mirror/vert/
+	data remove storage hd.sct:temp MirrorLoop

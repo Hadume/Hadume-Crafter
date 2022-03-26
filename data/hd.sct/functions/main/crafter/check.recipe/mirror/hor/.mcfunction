@@ -2,7 +2,7 @@
 #
 # 横軸の鏡写し
 #
-# @within function hd.sct:main/crafter/check.recipe/loop
+# @within function hd.sct:main/crafter/check.recipe/checking/unless.anywhere
 
 ## データを移しておく
 	data modify storage hd.sct:temp RecipeItems set from storage hd.sct:temp RecipesCopy[-1].Items

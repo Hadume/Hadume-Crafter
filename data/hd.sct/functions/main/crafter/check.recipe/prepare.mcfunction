@@ -22,9 +22,8 @@
 	execute if data storage hd.sct:temp ItemsCopy[-9] run data modify storage hd.sct:temp RecipesCopy append from storage hd.sct.asset:recipes _[-1][]
 ## 
 	data modify storage hd.sct:lib RemoveDisplay set value 1b
-	data modify storage hd.sct:lib RemoveDamage set value 1b
 ## レシピの確認
-	execute if data storage hd.sct:temp RecipesCopy[] run function hd.sct:main/crafter/check.recipe/loop
+	execute if data storage hd.sct:temp RecipesCopy[] run function hd.sct:main/crafter/check.recipe/checking/loop
 ## 同じレシピがあったら、次の工程を実行する
 	execute if score $HdSct.lib.Different HdSct.Temp matches 0 if data storage hd.sct:temp RecipesCopy[] run function hd.sct:main/crafter/check.recipe/set.complete/
 ## 同じレシピが無かったら、完成アイテムSlotを変える

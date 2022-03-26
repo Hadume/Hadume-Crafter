@@ -2,7 +2,9 @@
 #
 # 
 #
-# @within function hd.sct:main/recipe_book/page/change/**
+# @within function
+#   hd.sct:main/recipe_book/page/change/**
+#   hd.sct:main/recipe_book/open
 
 ## ページを探す
 	function hd.sct:main/recipe_book/page/find/
@@ -20,4 +22,4 @@
 ## 
 	execute if data storage hd.sct:temp RecipesCopy[{tag:{HdSct:{Recipe:{Selected:1b}}}}] run data remove storage hd.sct:temp RecipesCopy[{tag:{HdSct:{Recipe:{Selected:1b}}}}].tag.HdSct.Recipe.Selected
 ## 
-	data remove entity @s data.Using.RecipeBookTag
+	execute if data entity @s data.Using.RecipeBookTag run data remove entity @s data.Using.RecipeBookTag

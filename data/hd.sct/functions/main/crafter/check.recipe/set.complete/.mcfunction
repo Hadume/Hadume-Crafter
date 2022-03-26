@@ -13,4 +13,6 @@
 ## 
 	data modify storage hd.sct:temp RecipesCopy[-1].Result set from block ~ ~ ~ Items[{Slot:15b}]
 ## 今回使ったレシピを、コアの個人ストレージに保存する
-	data modify entity @s data.Using.Recipe set from storage hd.sct:temp RecipesCopy[-1]
+	execute if data block ~ ~ ~ Items[{Slot:15b}] run data modify entity @s data.Using.Recipe set from storage hd.sct:temp RecipesCopy[-1]
+## 
+	execute unless data block ~ ~ ~ Items[{Slot:15b}] run loot replace block ~ ~ ~ container.15 loot hd.sct:gui/air

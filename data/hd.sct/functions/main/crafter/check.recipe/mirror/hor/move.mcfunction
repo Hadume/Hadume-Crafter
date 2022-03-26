@@ -28,11 +28,10 @@
 ## ずらす
 	function hd.sct:lib/shift.slot/
 	data modify storage hd.sct:temp RecipesCopy[-1].Items set from storage hd.sct:lib ShiftSlot
+	data remove storage hd.sct:lib ShiftSlot
 ## 空白を入れる
 	data modify storage hd.sct:temp RecipesCopy[-1].Items append from storage hd.sct: Blank[]
 	execute if data storage hd.sct:temp ItemsCopy[{_:1b}] run data remove storage hd.sct:temp ItemsCopy[{_:1b}]
 	data modify storage hd.sct:temp ItemsCopy append from storage hd.sct: Blank[]
 ## レシピの確認
 	function hd.sct:main/crafter/check.recipe/normal.loop
-## 一時使用Storageをリセット
-	data remove storage hd.sct:lib ShiftSlot
