@@ -1,0 +1,26 @@
+{
+	"pools": [
+		{
+			"rolls": 1.0,
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:black_stained_glass_pane",
+					"functions": [
+						{
+							"function": "minecraft:set_name",
+							"entity": "this",
+							"name": {
+								"text": ""
+							}
+						},
+						{
+							"function": "minecraft:set_nbt",
+							"tag": "{HdRc:{}}"
+						}
+					]
+				}
+			]
+		}
+	]
+}

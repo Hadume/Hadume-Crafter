@@ -1,0 +1,22 @@
+{
+    "values": [
+        "hd.rc.asset:tags/minecraft/acacia_logs",
+        "hd.rc.asset:tags/minecraft/birch_logs",
+        "hd.rc.asset:tags/minecraft/coals",
+        "hd.rc.asset:tags/minecraft/crimson_stems",
+        "hd.rc.asset:tags/minecraft/dark_oak_logs",
+        "hd.rc.asset:tags/minecraft/jungle_logs",
+        "hd.rc.asset:tags/minecraft/logs",
+        "hd.rc.asset:tags/minecraft/oak_logs",
+        "hd.rc.asset:tags/minecraft/planks",
+        "hd.rc.asset:tags/minecraft/sand",
+        "hd.rc.asset:tags/minecraft/soul_fire_base_blocks",
+        "hd.rc.asset:tags/minecraft/spruce_logs",
+        "hd.rc.asset:tags/minecraft/stone_crafting_materials",
+        "hd.rc.asset:tags/minecraft/warped_stems",
+        "hd.rc.asset:tags/minecraft/wooden_slabs",
+        "hd.rc.asset:tags/minecraft/wool",
+        "hd.rc.asset:tags/sct/purpur_materials",
+        "hd.rc.asset:tags/sct/quartz_blocks"
+    ]
+}
