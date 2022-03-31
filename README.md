@@ -29,10 +29,14 @@ GUIはバニラのものとほとんど同じです
   3. 火打石と打ち金  
   /data modify storage hd.rc: AddRecipes append value {Items:[{Slot:1b,id:"minecraft:iron_ingot",Count:1b},{Slot:2b,id:"minecraft:flint",Count:1b}],Result:{id:"minecraft:flint_and_steel",Count:1b},Options:{Anywhere:1b}}  
   4. 棒  
-  /data modify storage hd.rc: AddRecipes append value {Items:[{Slot:1b,Tag:"minecraft:planks",Count:1b},{Slot:10b,Tag:"minecraft:planks",Count:1b}],Result:{id:"minecraft:stick",Count:4b}}  
+  /data modify storage hd.rc: AddRecipes append value {Items:[{Slot:1b,Tag:"minecraft:planks",Count:1b},{Slot:10b,Tag:"minecraft:planks",Count:1b}],Result:{id:"minecraft:stick",Count:4b}} 
+  
 <br>
+  
 ## 連絡  
 バグ報告や聞きたいことなどがありましたら[Twitter](https://twitter.com/Hadume_Damui)へご連絡をください  
+  
 <br>
+  
 ## 更新履歴  
 - v1.0 公開  
