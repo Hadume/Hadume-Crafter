@@ -1,6 +1,6 @@
 #> hd.rc:main/recipe_book/display.materials/reset.selected_recipe
 #
-# 
+# 選択したレシピのデータを削除
 #
 # @within function hd.rc:main/recipe_book/display.materials/
 

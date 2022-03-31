@@ -4,15 +4,15 @@
 #
 # @within function hd.rc:main/crafter/check.recipe/prepare
 
-## 要らない物を消す
+## 仮要素を削除
 	execute if data storage hd.rc:temp RecipesCopy[-1].Items[{_:1b}] run data remove storage hd.rc:temp RecipesCopy[-1].Items[{_:1b}]
-## 完成アイテムSlotを代入
+## Slotを代入
 	data modify storage hd.rc:temp RecipesCopy[-1].Result.Slot set value 15b
-## 完成アイテムを特殊作業台に表示させる
+## 表示
 	data modify block ~ ~ ~ Items append from storage hd.rc:temp RecipesCopy[-1].Result
-## 
+## display対策で戻す
 	data modify storage hd.rc:temp RecipesCopy[-1].Result set from block ~ ~ ~ Items[{Slot:15b}]
-## 今回使ったレシピを、コアの個人ストレージに保存する
+## レシピを保存
 	execute if data block ~ ~ ~ Items[{Slot:15b}] run data modify entity @s data.Using.Recipe set from storage hd.rc:temp RecipesCopy[-1]
-## 
+## 完成アイテムが無かったら、完成アイテムSlotを戻す
 	execute unless data block ~ ~ ~ Items[{Slot:15b}] run loot replace block ~ ~ ~ container.15 loot hd.rc:gui/air

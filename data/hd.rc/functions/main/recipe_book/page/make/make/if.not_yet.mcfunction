@@ -1,6 +1,6 @@
 #> hd.rc:main/recipe_book/page/make/make/if.not_yet
 #
-# 
+# データを追加
 #
 # @within function hd.rc:main/recipe_book/page/make/make/loop
 

@@ -1,6 +1,6 @@
 #> hd.rc:lib/compare.item/reset
 #
-# 
+# データを削除
 #
 # @input
 #   storage hd.rc:lib ComparedItem1

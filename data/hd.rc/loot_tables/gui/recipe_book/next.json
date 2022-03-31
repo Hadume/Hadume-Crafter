@@ -11,7 +11,7 @@
 							"function": "minecraft:set_name",
 							"entity": "this",
 							"name": {
-								"text": "次",
+								"text": "次へ 》",
 								"color": "yellow",
 								"italic": false
 							}

@@ -11,7 +11,9 @@
 							"function": "minecraft:set_name",
 							"entity": "this",
 							"name": {
-								"text": ""
+								"text": "出力",
+								"bold": true,
+								"italic": false
 							}
 						},
 						{

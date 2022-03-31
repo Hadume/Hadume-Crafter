@@ -1,12 +1,12 @@
 #> hd.rc:main/ui/
 #
-# SCTのUI
+# GUI
 #
 # @within function
 #   hd.rc:block/set
-#   hd.rc:main/recipe_book/page/change/return
+#   hd.rc:main/recipe_book/close
 #   hd.rc:main/crafter/repair.gui
-#   hd.rc:block/open/sct
+#   hd.rc:main/open/rc
 
 ## 
 	execute unless data storage hd.rc:temp ItemsCopy[{Slot:0b,tag:{HdRc:{}}}] run loot replace block ~ ~ ~ container.0 loot hd.rc:gui/air
@@ -25,8 +25,8 @@
 	execute unless data storage hd.rc:temp ItemsCopy[{Slot:25b,tag:{HdRc:{}}}] run loot replace block ~ ~ ~ container.25 loot hd.rc:gui/air
 	execute unless data storage hd.rc:temp ItemsCopy[{Slot:26b,tag:{HdRc:{}}}] run loot replace block ~ ~ ~ container.26 loot hd.rc:gui/air
 ## 
-	execute if entity @s[tag=!HdSctRM] run function hd.rc:main/ui/sct
-	execute if entity @s[tag=HdSctRM] run function hd.rc:main/ui/recipe_maker
+	execute if entity @s[tag=!HdRcRM] run function hd.rc:main/ui/sct
+	execute if entity @s[tag=HdRcRM] run function hd.rc:main/ui/recipe_maker
 ## 
 	execute unless data storage hd.rc:temp ItemsCopy[{Slot:1b}] run item replace block ~ ~ ~ container.1 with minecraft:air
 	execute unless data storage hd.rc:temp ItemsCopy[{Slot:2b}] run item replace block ~ ~ ~ container.2 with minecraft:air

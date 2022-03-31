@@ -1,6 +1,6 @@
 #> hd.rc:main/recipe_book/display.materials/tag/pick.tag/1
 #
-# Tagを追加する
+# Tagを保存
 #
 # @within function hd.rc:main/recipe_book/display.materials/tag/pick.tag/
 

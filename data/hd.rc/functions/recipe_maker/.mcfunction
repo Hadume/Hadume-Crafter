@@ -1,21 +1,21 @@
 #> hd.rc:recipe_maker/
 #
-# 
+# RM
 #
 # @within function hd.rc:main/using
 
 #> ScoreHolder
 # @private
  #declare score_holder $HdRc.Changed
-## 特殊作業台のどのアイテムが変ったか検知するための準備
+## どのアイテムが変ったかの検知の準備
 	data modify storage hd.rc:temp ItemsCopy set from entity @s data.Using.Items
-## SCT内のアイテムの数を取得
+## RM内のアイテムの数を取得
 	execute store result score $HdRc.Changed HdRc.Temp if data storage hd.rc:temp ItemsCopy[{tag:{HdRc:{}}}]
-## 特殊作業台のどのGUIのアイテムが変っていたら
+## RMのGUIのアイテムが変っていたら
 	execute unless score $HdRc.Changed HdRc.Temp matches 17 if data storage hd.rc:temp ItemsCopy[{Slot:17b,tag:{HdRc:{}}}] run function hd.rc:main/crafter/repair.gui
-## 
+## レシピデータを出力するか確認
 	execute unless score $HdRc.Changed HdRc.Temp matches 17 unless data storage hd.rc:temp ItemsCopy[{Slot:17b,tag:{HdRc:{}}}] run function hd.rc:recipe_maker/check
-## 一時使用ScoreHolderをリセット
+## ScoreHolderを削除
 	scoreboard players reset $HdRc.Changed
-## 一時使用Storageをリセット
+## Storageを削除
 	data remove storage hd.rc:temp ItemsCopy

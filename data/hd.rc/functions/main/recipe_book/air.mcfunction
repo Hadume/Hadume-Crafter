@@ -1,6 +1,6 @@
 #> hd.rc:main/recipe_book/air
 #
-# 
+# レシピアイテムSlotを削除
 #
 # @within function
 #   hd.rc:main/recipe_book/page/change/*

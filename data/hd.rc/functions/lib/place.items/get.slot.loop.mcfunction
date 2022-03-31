@@ -1,6 +1,6 @@
 #> hd.rc:lib/place.items/get.slot.loop
 #
-# 空いているSlotを確認
+# 空いているSlotを埋める
 #
 # @within function hd.rc:lib/place.items/
 # @private
@@ -42,14 +42,14 @@
 	execute unless score $HdRc.lib.Slot HdRc.Temp matches 0.. unless data storage hd.rc:lib InventoryCopy[{Slot:11b}] run scoreboard players set $HdRc.lib.Slot HdRc.Temp 11
 	execute unless score $HdRc.lib.Slot HdRc.Temp matches 0.. unless data storage hd.rc:lib InventoryCopy[{Slot:10b}] run scoreboard players set $HdRc.lib.Slot HdRc.Temp 10
 	execute unless score $HdRc.lib.Slot HdRc.Temp matches 0.. unless data storage hd.rc:lib InventoryCopy[{Slot:9b}] run scoreboard players set $HdRc.lib.Slot HdRc.Temp 9
-## Slotを入れる
+## Slotを代入
 	execute unless data storage hd.rc:lib PlaceItems[-1].Slot store result storage hd.rc:lib PlaceItems[-1].Slot byte 1 run scoreboard players get $HdRc.lib.Slot HdRc.Temp
 ## データを移動
 	data modify storage hd.rc:lib InventoryCopy append from storage hd.rc:lib PlaceItems[-1]
 	data modify storage hd.rc:lib PlaceItems1 append from storage hd.rc:lib PlaceItems[-1]
-## スコアをリセット
+## スコアを削除
 	scoreboard players reset $HdRc.lib.Slot
-## データを消す
+## データを削除
 	data remove storage hd.rc:lib PlaceItems[-1]
-## まだデータがあったらループ
+## ループ
 	execute if data storage hd.rc:lib PlaceItems[-1] run function hd.rc:lib/place.items/get.slot.loop

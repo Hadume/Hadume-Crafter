@@ -1,13 +1,13 @@
 #> hd.rc:main/recipe_book/return.items
 #
-# 
+# アイテムを返す
 #
 # @within function hd.rc:main/recipe_book/
 
 ## 
 	data modify storage hd.rc:lib ReturnItems set from storage hd.rc:temp ItemsCopy
 	execute positioned ~ ~1 ~ run function hd.rc:lib/return.items/
-## 
+## レシピアイテムSlotを削除
 	execute unless data storage hd.rc:temp RecipesCopy[{tag:{HdRc:{Recipe:{Selected:1b}}}}].tag.HdRc.Recipe.Items[{Slot:6b}] run item replace block ~ ~ ~ container.6 with minecraft:air
 	execute unless data storage hd.rc:temp RecipesCopy[{tag:{HdRc:{Recipe:{Selected:1b}}}}].tag.HdRc.Recipe.Items[{Slot:7b}] run item replace block ~ ~ ~ container.7 with minecraft:air
 	execute unless data storage hd.rc:temp RecipesCopy[{tag:{HdRc:{Recipe:{Selected:1b}}}}].tag.HdRc.Recipe.Items[{Slot:8b}] run item replace block ~ ~ ~ container.8 with minecraft:air

@@ -5,14 +5,14 @@
 # @within function hd.rc:main/recipe_book/tag/update
 # @private
 
-## 要素を消す
+## 要素を削除
 	execute if data storage hd.rc:temp TagCopy[-10].Value[] run data remove storage hd.rc:temp TagCopy[-10].Value[0]
-## 要素が無くなったら、元に戻す
+## 要素が無くなったら、戻す
 	execute unless data storage hd.rc:temp TagCopy[-10].Value[] run data modify storage hd.rc:temp TagCopy[-10].Value set from storage hd.rc:temp TagCopy[-10].Origin
-## 表示するアイテムを抽出
+## 
 	data modify storage hd.rc:temp TagItems append from storage hd.rc:temp TagCopy[-10].Item
 	data modify storage hd.rc:temp TagItems[-1].id set from storage hd.rc:temp TagCopy[-10].Value[0]
-## データをずらす
+## データを削除
 	data remove storage hd.rc:temp TagCopy[-1]
-## データがあったら、ループ
+## ループ
 	execute if data storage hd.rc:temp TagCopy[-10] run function hd.rc:main/recipe_book/tag/loop

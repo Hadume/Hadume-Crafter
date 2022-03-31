@@ -1,6 +1,6 @@
 #> hd.rc:main/ui/sct
 #
-# 
+# RC
 #
 # @within function hd.rc:main/ui/
 

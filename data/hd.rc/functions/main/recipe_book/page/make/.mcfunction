@@ -1,6 +1,6 @@
 #> hd.rc:main/recipe_book/page/make/
 #
-# レシピブックのページを作る
+# レシピブックのページを作成
 #
 # @within function
 #   hd.rc:main/recipe_book/open
@@ -19,18 +19,18 @@
  #declare tag HdRc.ChestMinecart
 ## ページデータを追加
 	data modify storage hd.rc:recipe_book _ append value {}
-## ページを設定
+## ページ数を設定
 	execute store result storage hd.rc:recipe_book _[-1].Page int 1 run scoreboard players add $HdRc.Page HdRc.Global 1
-## Slotの調整
+## Slotを調整
 	scoreboard players set $HdRc.Slot HdRc.Temp -1
 ## データを設定
 	function hd.rc:main/recipe_book/page/make/make/loop
-## 
+## チェストトロッコを召喚
 	summon minecraft:chest_minecart ~ ~ ~ {Tags:["HdRc.ChestMinecart"]}
-
+## データを追加/戻す
 	data modify entity @e[type=minecraft:chest_minecart,tag=HdRc.ChestMinecart,distance=0,limit=1] Items append from storage hd.rc:recipe_book _[-1].Data[]
 	data modify storage hd.rc:temp RecipeResults append from entity @e[type=minecraft:chest_minecart,tag=HdRc.ChestMinecart,distance=0,limit=1] Items[]
-
+## レシピデータが無かったら、空データに変更
 	execute unless data storage hd.rc:temp RecipeResults[{Slot:0b}] run data modify storage hd.rc:recipe_book _[-1].Data[{Slot:0b}] set value {Slot:0b,id:"minecraft:black_stained_glass_pane",Count:1b,tag:{display:{Name:'{"text": ""}'},HdRc:{}}}
 	execute unless data storage hd.rc:temp RecipeResults[{Slot:1b}] run data modify storage hd.rc:recipe_book _[-1].Data[{Slot:1b}] set value {Slot:1b,id:"minecraft:black_stained_glass_pane",Count:1b,tag:{display:{Name:'{"text": ""}'},HdRc:{}}}
 	execute unless data storage hd.rc:temp RecipeResults[{Slot:2b}] run data modify storage hd.rc:recipe_book _[-1].Data[{Slot:2b}] set value {Slot:2b,id:"minecraft:black_stained_glass_pane",Count:1b,tag:{display:{Name:'{"text": ""}'},HdRc:{}}}
@@ -46,9 +46,9 @@
 	execute unless data storage hd.rc:temp RecipeResults[{Slot:20b}] run data modify storage hd.rc:recipe_book _[-1].Data[{Slot:20b}] set value {Slot:20b,id:"minecraft:black_stained_glass_pane",Count:1b,tag:{display:{Name:'{"text": ""}'},HdRc:{}}}
 	execute unless data storage hd.rc:temp RecipeResults[{Slot:21b}] run data modify storage hd.rc:recipe_book _[-1].Data[{Slot:21b}] set value {Slot:21b,id:"minecraft:black_stained_glass_pane",Count:1b,tag:{display:{Name:'{"text": ""}'},HdRc:{}}}
 	execute unless data storage hd.rc:temp RecipeResults[{Slot:22b}] run data modify storage hd.rc:recipe_book _[-1].Data[{Slot:22b}] set value {Slot:22b,id:"minecraft:black_stained_glass_pane",Count:1b,tag:{display:{Name:'{"text": ""}'},HdRc:{}}}
-
+## チェスト付きトロッコを消す
 	kill @e[type=minecraft:chest_minecart,tag=HdRc.ChestMinecart,distance=0]
-## 一時使用ScoreHolderをリセット
+## ScoreHolderを削除
 	scoreboard players reset $HdRc.Slot
-## 
+## Storageを削除
 	data remove storage hd.rc:temp RecipeResults

@@ -1,12 +1,12 @@
 #> hd.rc:main/recipe_book/
 #
-# 
+# レシピブック
 #
 # @within function hd.rc:main/changed.items
 
-## SCTの中身をコピー
+## RCのアイテムをコピー
 	data modify storage hd.rc:temp RecipesCopy append from entity @s data.Using.RecipeBook[]
-## 
+## 変ったアイテムをあぶりだす
 	execute if data storage hd.rc:temp ItemsCopy[{Slot:0b,tag:{HdRc:{}}}] run data modify storage hd.rc:temp RecipesCopy append value {_:1b}
 	execute if data storage hd.rc:temp ItemsCopy[{Slot:1b,tag:{HdRc:{}}}] if data storage hd.rc:temp RecipesCopy[-16] run data modify storage hd.rc:temp RecipesCopy append value {_:1b}
 	execute if data storage hd.rc:temp ItemsCopy[{Slot:2b,tag:{HdRc:{}}}] if data storage hd.rc:temp RecipesCopy[-17] run data modify storage hd.rc:temp RecipesCopy append value {_:1b}
@@ -22,20 +22,19 @@
 	execute if data storage hd.rc:temp ItemsCopy[{Slot:20b,tag:{HdRc:{}}}] if data storage hd.rc:temp RecipesCopy[-27] run data modify storage hd.rc:temp RecipesCopy append value {_:1b}
 	execute if data storage hd.rc:temp ItemsCopy[{Slot:21b,tag:{HdRc:{}}}] if data storage hd.rc:temp RecipesCopy[-28] run data modify storage hd.rc:temp RecipesCopy append value {_:1b}
 	execute if data storage hd.rc:temp ItemsCopy[{Slot:22b,tag:{HdRc:{}}}] if data storage hd.rc:temp RecipesCopy[-29] run data modify storage hd.rc:temp RecipesCopy append value {_:1b}
-## 
+## レシピアイテムを表示
 	execute if data storage hd.rc:temp RecipesCopy[-15].tag.HdRc.Recipe run function hd.rc:main/recipe_book/display.materials/
-## 
+## ページを変更
 	execute unless data storage hd.rc:temp ItemsCopy[{Slot:5b,tag:{HdRc:{}}}] run function hd.rc:main/recipe_book/page/change/prev
 	execute unless data storage hd.rc:temp ItemsCopy[{Slot:23b,tag:{HdRc:{}}}] run function hd.rc:main/recipe_book/page/change/next/
-	execute unless data storage hd.rc:temp ItemsCopy[{Slot:14b,tag:{HdRc:{}}}] run function hd.rc:main/recipe_book/page/change/return
-## 
+	execute unless data storage hd.rc:temp ItemsCopy[{Slot:14b,tag:{HdRc:{}}}] run function hd.rc:main/recipe_book/close
+## RCのアイテムを更新
 	execute if data storage hd.rc:temp ItemsCopy[] run data modify storage hd.rc:temp NewItems append from entity @s data.Using.RecipeBook[]
 	execute if data storage hd.rc:temp ItemsCopy[] if data storage hd.rc:temp RecipesCopy[].tag.HdRc.Recipe.Selected run data modify storage hd.rc:temp NewItems append from storage hd.rc:temp RecipesCopy[{tag:{HdRc:{Recipe:{Selected:1b}}}}].tag.HdRc.Recipe.Items[]
-## 
 	data modify block ~ ~ ~ Items append from storage hd.rc:temp NewItems[]
-## 
+## アイテムを返す
 	data remove storage hd.rc:temp ItemsCopy[{tag:{HdRc:{}}}]
 	execute if data storage hd.rc:temp ItemsCopy[] run function hd.rc:main/recipe_book/return.items
-## 
+## Storageを削除
 	data remove storage hd.rc:temp RecipesCopy
 	data remove storage hd.rc:temp NewItems

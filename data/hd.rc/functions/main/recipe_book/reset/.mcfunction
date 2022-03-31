@@ -1,6 +1,6 @@
 #> hd.rc:main/recipe_book/reset/
 #
-# レシピブックの内容をリセット
+# レシピブックを削除
 #
 # @within function
 #   hd.rc:main/recipe_book/reset/tell
@@ -11,12 +11,12 @@
 # @private
  #declare score_holder $HdRc.Recipes.Now
  #declare score_holder $HdRc.Recipes.Before
-## レシピブックをリセットする
+## レシピブックを削除
 	execute if data storage hd.rc:recipe_book _ run data remove storage hd.rc:recipe_book _
-## ページカウントをリセット
+## ページ数を削除
 	execute if score $HdRc.Page HdRc.Global matches ..2147483647 run scoreboard players reset $HdRc.Page
-## レシピデータをセットする
+## レシピデータを設定
 	data remove storage hd.rc:recipe_book NotYet
 	data modify storage hd.rc:recipe_book NotYet append from storage hd.rc.asset:recipes _[][]
-## 前の数値と今の数値を同じにする
+## 前の値と今の値を同じに
 	execute store result score $HdRc.Recipes.Before HdRc.Global if data storage hd.rc.asset:recipes _[][]

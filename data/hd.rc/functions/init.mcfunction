@@ -18,7 +18,7 @@
 #> Tags
 # @internal
  #declare tag HdRc
- #declare tag HdSctThis
+ #declare tag HdRcThis
 ## 初期化完了
 	data modify storage hd.rc: Init set value 1b
 #> Scoreboard
@@ -36,7 +36,7 @@
 		data modify storage hd.rc: tellrawName set value "[システム]"
 	### 仮要素
 		data modify storage hd.rc: Blank set value [{_:1b},{_:1b},{_:1b},{_:1b},{_:1b},{_:1b},{_:1b},{_:1b},{_:1b}]
-## レシピ追加
+## レシピを追加
 	function #hd.rc.asset:recipes
 	function #hd.rc.asset:tags
 	function hd.rc:add.recipes/
