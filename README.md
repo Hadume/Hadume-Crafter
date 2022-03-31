@@ -1,8 +1,9 @@
-# Rakula-Crafter
-## 概要
+# Rakula-Crafter  
+## 概要  
 カスタムレシピを『楽々』に使える作業台です  
+バージョン 「1.18.x」 でのみ動きます  
 <br>
-## 使い方
+## 使い方  
 「樽」の上に「額縁」(「輝く額縁」でもOK)を置き、額縁に「作業台」を入れることで『ラクラ・クラフター』を設置できます  
 GUIはバニラのものとほとんど同じです  
 ## レシピの追加方法
@@ -30,12 +31,10 @@ GUIはバニラのものとほとんど同じです
   /data modify storage hd.rc: AddRecipes append value {Items:[{Slot:1b,id:"minecraft:iron_ingot",Count:1b},{Slot:2b,id:"minecraft:flint",Count:1b}],Result:{id:"minecraft:flint_and_steel",Count:1b},Options:{Anywhere:1b}}  
   4. 棒  
   /data modify storage hd.rc: AddRecipes append value {Items:[{Slot:1b,Tag:"minecraft:planks",Count:1b},{Slot:10b,Tag:"minecraft:planks",Count:1b}],Result:{id:"minecraft:stick",Count:4b}} 
-  
 <br>
   
 ## 連絡  
 バグ報告や聞きたいことなどがありましたら[Twitter](https://twitter.com/Hadume_Damui)へご連絡をください  
-  
 <br>
   
 ## 更新履歴  
