@@ -30,7 +30,7 @@ GUIはバニラのものとほとんど同じです
   /data modify storage hd.rc: AddRecipes append value {Items:[{Slot:1b,id:"minecraft:iron_ingot",Count:1b},{Slot:2b,id:"minecraft:flint",Count:1b}],Result:{id:"minecraft:flint_and_steel",Count:1b},Options:{Anywhere:1b}}  
   4. 棒  
   /data modify storage hd.rc: AddRecipes append value {Items:[{Slot:1b,Tag:"minecraft:planks",Count:1b},{Slot:10b,Tag:"minecraft:planks",Count:1b}],Result:{id:"minecraft:stick",Count:4b}}  
-<br>
+<br>  
 ## 連絡  
 バグ報告や聞きたいことなどがありましたら[Twitter](https://twitter.com/Hadume_Damui)へご連絡をください  
 <br>
