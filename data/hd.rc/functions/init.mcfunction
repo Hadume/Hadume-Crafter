@@ -32,6 +32,8 @@
 ## Storage
 	### レシピ
 		data modify storage hd.rc.asset:recipes _ set value [[],[],[],[],[],[],[],[],[]]
+	### Tag
+		data remove storage hd.rc.asset:tags _
 	### チャット時の名前
 		data modify storage hd.rc: tellrawName set value "[システム]"
 	### 仮要素
