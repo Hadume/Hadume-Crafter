@@ -2,7 +2,7 @@
 #
 # RM
 #
-# @within function hd.rc:main/using
+# @within function hd.rc:main/changed.items/
 
 #> ScoreHolder
 # @private

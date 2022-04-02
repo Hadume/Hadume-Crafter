@@ -7,7 +7,7 @@
 #> Tags
 # @private
 # @within function
-#   hd.rc:main/using
+#   hd.rc:main/changed.items/
 #   hd.rc:main/ui/
 #   hd.rc:main/crafter/repair.gui
  #declare tag HdRcRM

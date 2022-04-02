@@ -1,8 +1,8 @@
-#> hd.rc:main/changed.items
+#> hd.rc:main/changed.items/main
 #
 # RCの中身が変ってたら
 #
-# @within function hd.rc:main/using
+# @within function hd.rc:main/changed.items/
 
 #> ScoreHolder
 # @private

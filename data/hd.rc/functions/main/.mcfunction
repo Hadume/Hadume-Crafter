@@ -2,7 +2,7 @@
 #
 # RCで常時実行
 #
-# @within function hd.rc:tick
+# @within function hd.rc:rc
 
 ## RCを破壊
 	execute unless block ~ ~ ~ minecraft:barrel[facing=up] run function hd.rc:block/break/

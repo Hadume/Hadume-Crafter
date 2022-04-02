@@ -19,7 +19,7 @@
 	execute if data storage hd.rc:temp ItemsCopy[{Slot:19b}] run data remove storage hd.rc:temp ItemsCopy[{Slot:19b}]
 	execute if data storage hd.rc:temp ItemsCopy[{Slot:20b}] run data remove storage hd.rc:temp ItemsCopy[{Slot:20b}]
 	execute if data storage hd.rc:temp ItemsCopy[{Slot:21b}] run data remove storage hd.rc:temp ItemsCopy[{Slot:21b}]
-	execute if entity @s[tag=!HdRcRM] if data entity @s data.Using.Recipe run data remove storage hd.rc:temp ItemsCopy[{Slot:15b}]
+	execute if entity @s[tag=!HdRcRM,nbt={data:{Using:{Recipe:{}}}}] run data remove storage hd.rc:temp ItemsCopy[{Slot:15b}]
 	execute if entity @s[tag=HdRcRM] run data remove storage hd.rc:temp ItemsCopy[{Slot:15b}]
 ## アイテムを返す
 	execute if data storage hd.rc:temp ItemsCopy[] run data modify storage hd.rc:lib ReturnItems append from storage hd.rc:temp ItemsCopy[]

@@ -1,0 +1,17 @@
+{
+    "criteria": {
+        "trigger": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "nbt": "{HdRc:{}}"
+                    }
+                ]
+            }
+        }
+    },
+    "rewards": {
+        "function": "hd.rc:clear.items"
+    }
+}
